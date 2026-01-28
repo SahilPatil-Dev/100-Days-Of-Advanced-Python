@@ -16,3 +16,17 @@ Most Python bugs are not syntax problems — they are reference problems.
 - `memory_references.py` → experiments with object identity and mutation
 
 This foundation is critical for writing clean, predictable, and scalable Python code.
+
+## Day 02 – Mutability Traps & Default Arguments
+
+### What I Learned
+- Default arguments are evaluated once at function definition
+- Mutable defaults cause shared state bugs
+- The `None` pattern prevents hidden side effects
+- Class constructors are especially risky with mutable defaults
+
+### Key Insight
+Defaults belong to the function object, not the function call.
+
+### Files
+- `default_arguments.py` → experiments demonstrating shared state bugs
