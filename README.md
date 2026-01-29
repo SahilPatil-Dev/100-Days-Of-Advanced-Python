@@ -30,3 +30,56 @@ Defaults belong to the function object, not the function call.
 
 ### Files
 - `default_arguments.py` → experiments demonstrating shared state bugs
+
+
+## Day 03 – Functions as First-Class Objects  
+### Behavior as Data in Python
+
+---
+
+### What I Learned
+
+- Functions in Python are objects and can be:
+  - Assigned to variables
+  - Stored in data structures
+  - Passed as arguments
+  - Returned from other functions
+- This allows programs to choose behavior dynamically at runtime instead of hard-coding logic with conditionals.
+
+---
+
+### Key Concepts Practiced
+
+- Using dictionaries to map operations to functions
+- Passing functions as arguments to execute dynamic behavior
+- Returning functions from factory functions
+- Building configurable logic without `if / elif` chains
+
+---
+
+### Why This Matters
+
+Modern backend systems rely on treating **behavior as data**.
+
+Frameworks such as FastAPI and Django use this pattern to implement:
+- Dependency injection
+- Middleware pipelines
+- Permission and authorization checks
+- Request validation layers
+
+Understanding functions as first-class objects is foundational for writing **clean, extensible, and testable backend code**.
+
+---
+
+### Files
+
+- **function_executor.py**  
+  Dynamic operation execution using function mappings.
+
+- **permission_checker.py**  
+  Function factory for role-based permission checks.
+
+- **validator_engine.py**  
+  Rule-based validation using lists of validator functions.
+
+---
