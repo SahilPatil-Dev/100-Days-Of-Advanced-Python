@@ -83,3 +83,83 @@ Understanding functions as first-class objects is foundational for writing **cle
   Rule-based validation using lists of validator functions.
 
 ---
+
+## Day 04 – Closures
+### Functions That Retain State Safely
+
+---
+
+## What I Learned
+
+- A **closure** is a function that remembers variables from the scope in which it was created.
+- Closures allow state to persist across function calls **without using global variables or classes**.
+- The remembered state lives in the **outer function’s local scope**, preserved by the inner function.
+- The `nonlocal` keyword is required when an inner function needs to **modify** outer-scope variables.
+
+---
+
+## Key Concepts Practiced
+
+- Creating inner functions that access outer-scope variables
+- Retaining private state across multiple function calls
+- Using `nonlocal` to safely mutate closure state
+- Building stateful logic without globals or object-oriented patterns
+
+---
+
+## What Problem Closures Solve
+
+Closures solve the problem of **state management with isolation**.
+
+They allow functions to:
+- Maintain state across calls
+- Avoid shared global variables
+- Encapsulate logic and data together
+- Create multiple independent instances of the same behavior
+
+This enables predictable and reusable behavior in systems that require controlled state.
+
+---
+
+## Why Closures Are Safer Than Globals
+
+Global variables introduce:
+- Hidden dependencies
+- Shared mutable state
+- Race conditions in concurrent systems
+- Difficult-to-test logic
+
+Closures provide:
+- Private, instance-level state
+- Explicit creation of stateful behavior
+- Improved testability and predictability
+- Better safety in multi-request backend environments
+
+Each closure instance maintains its own isolated memory.
+
+---
+
+## Where This Appears in Backend Systems
+
+Closures are commonly used in backend development for:
+
+- Request and usage counters
+- Rate limiting and throttling logic
+- Authorization and permission checks
+- Dependency injection systems
+- Request-scoped configuration and context handling
+
+Frameworks such as FastAPI and Django rely on closure-based patterns internally to manage state without global side effects.
+
+---
+
+## Files
+
+- **request_counter.py**  
+  Closure-based request counter that retains state across calls.
+
+- **access_control.py**  
+  Role-based access checker using closure-stored permissions.
+
+- **rate_limiter.py**  
+  Lightweight rate limiting logic using closure state.
