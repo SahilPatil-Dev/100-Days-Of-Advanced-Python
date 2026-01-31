@@ -163,3 +163,77 @@ Frameworks such as FastAPI and Django rely on closure-based patterns internally 
 
 - **rate_limiter.py**  
   Lightweight rate limiting logic using closure state.
+
+## Day 05 – Decorators
+### Wrapping Behavior Like Real Frameworks
+
+---
+
+## What I Learned
+
+- A decorator is a function that **wraps another function** to add behavior without modifying the original code.
+- Decorators replace the original function with a wrapper function at definition time.
+- The wrapper controls **when and how** the original function is executed.
+- `*args` and `**kwargs` are required to make decorators reusable for functions with different signatures.
+- Decorators can accept configuration by using **multiple nested functions**.
+
+---
+
+## Key Concepts Practiced
+
+- Function wrapping and replacement
+- Using closures to retain access to the original function
+- Writing generic wrappers with `*args` and `**kwargs`
+- Creating decorators with arguments for configurable behavior
+- Preserving original function behavior while adding cross-cutting logic
+
+---
+
+## What Problem Decorators Solve
+
+Decorators solve the problem of **repetitive cross-cutting logic**.
+
+In backend systems, many functions require the same additional behavior such as logging, authentication, or monitoring.  
+Decorators allow this behavior to be added **externally**, without duplicating code or modifying business logic.
+
+This results in cleaner, more maintainable systems.
+
+---
+
+## How Decorators Wrap Behavior
+
+- At definition time, the decorator receives the target function.
+- The decorator returns a wrapper function.
+- The wrapper replaces the original function.
+- When the function is called, the wrapper executes first and decides when to invoke the original function.
+
+This wrapping mechanism allows behavior to run **before and after** the original function execution.
+
+---
+
+## Where Decorators Appear in Backend Systems
+
+Decorators are a foundational pattern in backend frameworks and infrastructure code, including:
+
+- Authentication and authorization layers
+- Logging and request tracing
+- Middleware pipelines
+- Dependency injection systems
+- Performance monitoring and metrics collection
+
+Frameworks such as FastAPI and Django rely heavily on decorator-based patterns to implement these features.
+
+---
+
+## Files
+
+- **logging_decorator.py**  
+  Decorator for logging function calls, arguments, and return values.
+
+- **auth_decorator.py**  
+  Role-based access control using a configurable decorator.
+
+- **performance_tracker.py**  
+  Execution time measurement for performance monitoring.
+
+---
