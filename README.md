@@ -237,3 +237,68 @@ Frameworks such as FastAPI and Django rely heavily on decorator-based patterns t
   Execution time measurement for performance monitoring.
 
 ---
+
+## Day 06 – Error Handling Strategy
+### Designing Fail-Safe Python Code
+
+---
+
+## What I Learned
+
+- Errors are part of normal backend control flow.
+- Exceptions should be **raised where detected** and **caught only at boundaries**.
+- Returning error strings hides failures and breaks control flow.
+- Custom exceptions make intent and failure causes explicit.
+- Not all errors should be handled immediately.
+
+---
+
+## Why Exceptions Are Better Than Return Codes
+
+- Exceptions separate error logic from business logic.
+- They prevent silent failures.
+- They preserve stack traces and context.
+- They force the caller to consciously handle failure cases.
+
+Return codes are easy to ignore. Exceptions are not.
+
+---
+
+## Where Errors Should Be Handled in Backend Systems
+
+- Input validation layers
+- API boundaries
+- Service entry points
+- Application startup logic
+
+Lower-level functions should raise errors, not decide outcomes.
+
+---
+
+## User Errors vs System Errors
+
+- User errors:
+  - Invalid input
+  - Broken business rules
+  - Raised intentionally and handled cleanly
+
+- System errors:
+  - File access issues
+  - Permission problems
+  - Missing resources
+  - Wrapped and re-raised with context
+
+---
+
+## Files
+
+- **input_validation.py**  
+  Custom exceptions for request-style input validation.
+
+- **service_layer.py**  
+  Demonstrates controlled error propagation and boundary handling.
+
+- **safe_file_reader.py**  
+  Safe file access with preserved error context.
+
+---
