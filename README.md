@@ -302,3 +302,145 @@ Lower-level functions should raise errors, not decide outcomes.
   Safe file access with preserved error context.
 
 ---
+
+## Day 07 – Modules, Packages & Project Structure
+### Organizing Python Code Like Real Backend Systems
+
+---
+
+## Why Structure Matters More Than Syntax
+
+In backend systems, code is read more often than it is written.
+
+Clean structure:
+- Reduces onboarding time
+- Prevents accidental bugs
+- Makes systems easier to extend
+- Lowers maintenance risk
+
+Messy structure increases cost, not speed.
+
+---
+
+## How the Code Is Layered
+
+- **main.py**
+  Entry point responsible only for orchestration and error handling.
+
+- **validators/**
+  Input validation logic. Rejects bad data early.
+
+- **services/**
+  Business logic and core operations.
+
+- **exceptions/**
+  Custom, domain-specific exceptions shared across layers.
+
+Each layer has a single responsibility.
+
+---
+
+## Where Business Logic Lives
+
+Business logic lives inside the **services** layer.
+
+- It is never placed in `main.py`
+- It does not handle user interaction
+- It raises errors instead of printing messages
+
+This mirrors real backend service architecture.
+
+---
+
+## Project Structure
+
+- **main.py**  
+  Application entry point and error boundary.
+
+- **validators/user.py**  
+  User input validation logic.
+
+- **services/payment.py**  
+  Payment processing logic.
+
+- **exceptions/errors.py**  
+  Custom exception definitions.
+
+---
+
+## Day 08 – Python Standard Library Power
+### Writing Safer Backend Code Using Built-in Tools
+
+---
+
+## Why Standard Library Mastery Matters
+
+Production backend systems fail due to:
+- broken file paths
+- duplicate identifiers
+- incorrect timestamps
+- missing logs
+
+Python’s standard library provides reliable, battle-tested tools to prevent these issues without adding unnecessary dependencies.
+
+---
+
+## What This Project Demonstrates
+
+This project simulates a backend login audit system using only the Python standard library.
+
+It focuses on:
+- safe file handling
+- request traceability
+- timezone-aware event logging
+- structured persistence
+
+---
+
+## Key Tools Used
+
+### pathlib
+Used to locate and manage files safely across operating systems without fragile string paths.
+
+### datetime (timezone-aware)
+All timestamps are generated using UTC to avoid silent timezone bugs common in backend systems.
+
+### uuid
+Each login event is assigned a globally unique request ID, making events traceable across systems.
+
+### logging
+The logging module is used instead of `print()` to produce structured, timestamped, severity-aware output suitable for production environments.
+
+---
+
+## Why print() Is Avoided
+
+`print()` statements:
+- lack severity levels
+- cannot be filtered
+- do not scale in production
+
+The logging module provides observability required for real backend systems.
+
+---
+
+## File Overview
+
+- **login_audit.py**  
+  Simulates a backend login audit system.  
+  Each login generates a unique request ID, a timezone-aware timestamp, is persisted to disk, and logged using Python’s logging module.
+
+---
+
+## Backend Relevance
+
+Patterns used here appear directly in:
+- authentication systems
+- audit logging
+- request tracing
+- security event tracking
+- compliance logs
+
+This reflects real backend infrastructure behavior using only Python’s standard library.
+
+---
