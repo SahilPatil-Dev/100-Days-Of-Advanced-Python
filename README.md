@@ -444,3 +444,106 @@ Patterns used here appear directly in:
 This reflects real backend infrastructure behavior using only Python’s standard library.
 
 ---
+
+## Day 09 – Data Validation & Serialization
+### Making Python Code API-Ready Without Frameworks
+
+---
+
+## Purpose of This Project
+
+Backend systems never trust raw input.
+
+This project demonstrates how to:
+- validate untrusted input at a clear boundary
+- normalize data into a predictable internal model
+- serialize internal objects into JSON-safe output
+- handle validation errors at the system boundary
+
+The structure mirrors how real APIs process requests internally.
+
+---
+
+## Validation Boundary
+
+All input validation happens inside the `User.from_dict()` method.
+
+This ensures:
+- business logic never validates input
+- validation rules are centralized
+- invalid data is rejected early
+
+Raw dictionaries are never passed deeper into the system.
+
+---
+
+## Internal Model vs External Representation
+
+### Internal Model (`User`)
+- Strongly typed
+- Normalized (email lowercased, age converted to int)
+- Safe for business logic to consume
+
+### External Representation
+- Plain dictionaries
+- JSON-safe
+- Only approved fields are exposed
+
+Internal objects are never returned directly.
+
+---
+
+## Error Handling Strategy
+
+- Custom exceptions are raised during validation
+- Errors propagate upward naturally
+- Exceptions are caught only at the API boundary
+- Clean error messages are returned to the caller
+
+This avoids silent failures and keeps control flow predictable.
+
+---
+
+## Request Lifecycle (Simulated)
+
+The API simulation follows this exact flow:
+
+1. Receive raw input dictionary
+2. Validate and normalize input
+3. Create internal `User` object
+4. Serialize output
+5. Catch validation errors at the boundary
+6. Return success or error response
+
+This mirrors the internal behavior of backend frameworks like FastAPI and Django REST Framework.
+
+---
+
+## File Overview
+
+- **user_schema.py**  
+  Defines the internal `User` model and handles validation and normalization.
+
+- **serializer.py**  
+  Converts internal user objects into JSON-safe dictionaries.
+
+- **main.py**  
+  Simple execution example demonstrating validation and serialization.
+
+- **api_simulator.py**  
+  Simulates an API endpoint with proper error handling boundaries.
+
+---
+
+## Backend Relevance
+
+The patterns used here appear directly in:
+- API request parsing
+- schema validation layers
+- service boundaries
+- response serialization
+- input safety enforcement
+
+Understanding this flow is required before using API frameworks.
+
+---
