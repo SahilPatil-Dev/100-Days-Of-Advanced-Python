@@ -547,3 +547,117 @@ The patterns used here appear directly in:
 Understanding this flow is required before using API frameworks.
 
 ---
+
+## Day 10 – Testing Strategy
+### Writing Backend-Grade Tests That Protect Behavior
+
+---
+
+## Purpose of This Day
+
+Backend code is changed far more often than it is written.
+
+This day focuses on writing tests that:
+- protect critical behavior
+- prevent invalid data from entering the system
+- catch regressions early
+- make refactoring safe
+
+Untested backend code is considered unfinished.
+
+---
+
+## What Is Tested (Intentional Scope)
+
+This test suite focuses on **high-risk backend logic**:
+
+### Validation Layer
+- User input validation
+- Type normalization
+- Failure cases for invalid data
+
+### Serialization Layer
+- JSON-safe output
+- Data exposure control
+- Output structure stability
+
+Low-value targets such as printing, logging, or internal implementation details are intentionally not tested.
+
+---
+
+## Validation Tests (Failure-Focused)
+
+The validation tests assert that:
+
+- Valid input produces a clean internal `User` object
+- Invalid emails raise `InvalidEmailError`
+- Underage users raise `InvalidAgeError`
+- Edge cases (strings, negatives, floats) are rejected explicitly
+
+Parameterized tests are used to ensure multiple failure cases are covered without duplicating test code.
+
+This ensures the system **fails early and predictably** when receiving bad input.
+
+---
+
+## Serialization Tests (Data Safety)
+
+Serialization tests verify that:
+
+- Output is JSON-safe (`dict`)
+- Only approved fields are exposed
+- Internal object state is never leaked
+
+These tests protect against accidental data exposure — a real production risk in API systems.
+
+---
+
+## Regression Test (Test-Driven Fix)
+
+A regression test was added to ensure that:
+- Float values for `age` are rejected
+- Silent type coercion does not introduce invalid data
+
+This test simulates a real backend bug report:
+1. A failing test is written first
+2. The implementation is fixed
+3. The test suite passes again
+
+This workflow mirrors professional backend development practices.
+
+---
+
+## Testing Philosophy Used
+
+- Tests focus on **behavior**, not implementation
+- Failure paths are tested as seriously as success paths
+- Each test validates a single responsibility
+- Exceptions are asserted explicitly
+- Tests remain stable during refactoring
+
+---
+
+## Project Structure
+
+- **tests/test_user_validation.py**  
+  Covers valid input, invalid email cases, underage users, and regression scenarios.
+
+- **tests/test_serializer.py**  
+  Ensures safe, predictable, and controlled serialization output.
+
+- **test_driven_fix.py**  
+  Demonstrates test-first bug fixing to prevent regressions.
+
+---
+
+## Backend Relevance
+
+These testing patterns are directly applicable to:
+- API validation layers
+- Schema enforcement
+- Regression prevention
+- Safe refactoring in team environments
+
+This is the baseline expected for backend engineers working on production systems.
+
+---

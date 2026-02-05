@@ -23,9 +23,15 @@ class User:
         # Email validation
         if not isinstance(email, str) or "@" not in email:
             raise InvalidEmailError("Invalid email")
+        
+        local, domain = email.split("@", 1)
+        if not local or not domain:
+            raise InvalidEmailError("Invalid email")
 
         # Age validation
         try:
+            if not isinstance(age, (int, str)):
+                raise InvalidAgeError("Age must be a number")
             age = int(age)
         except (TypeError, ValueError):
             raise InvalidAgeError("Age must be a number")
