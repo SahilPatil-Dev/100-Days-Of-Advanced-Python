@@ -31,7 +31,7 @@ class User:
         # Age validation
         try:
             if not isinstance(age, (int, str)):
-                raise InvalidAgeError("Age must be a number")
+                raise InvalidAgeError("Age must be a Number")
             age = int(age)
         except (TypeError, ValueError):
             raise InvalidAgeError("Age must be a number")
