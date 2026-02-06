@@ -661,3 +661,72 @@ These testing patterns are directly applicable to:
 This is the baseline expected for backend engineers working on production systems.
 
 ---
+
+## Day 11 – Type Hints & Static Thinking
+### Writing Safer, Contract-Driven Python Backend Code
+
+---
+
+## Why Type Hints Matter in Backend Systems
+
+Backend systems are maintained by teams, not individuals.
+
+Type hints:
+- clarify function contracts
+- reduce misuse of APIs
+- make intent explicit
+- improve long-term maintainability
+
+They are not about verbosity — they are about safety.
+
+---
+
+## Static Thinking in a Dynamic Language
+
+Static thinking means designing code with clear expectations:
+
+- what data is allowed
+- what is optional
+- what is guaranteed after validation
+- what failures look like
+
+Type hints force these decisions early.
+
+---
+
+## Where Types Prevent Bugs
+
+- Preventing missing fields (`Optional`)
+- Preventing silent type coercion
+- Clarifying untrusted vs trusted data
+- Making illegal states obvious
+
+Runtime checks enforce correctness.
+Type hints document intent.
+
+---
+
+## Project Structure
+
+- **user_service.py**  
+  Defines typed validation boundaries and user creation logic.
+
+- **discount_calculator.py**  
+  Demonstrates defensive, type-safe business logic.
+
+- **typed_api_simulator.py**  
+  Simulates an API handler using typed contracts and clear error boundaries.
+
+---
+
+## Team Collaboration Benefits
+
+Typed code:
+- is easier to review
+- is safer to refactor
+- reduces onboarding time
+- scales better across teams
+
+This is why typed Python is expected in backend roles.
+
+---
