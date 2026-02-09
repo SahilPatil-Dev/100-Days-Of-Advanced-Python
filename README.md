@@ -730,3 +730,82 @@ Typed code:
 This is why typed Python is expected in backend roles.
 
 ---
+
+## Day 12 – Configuration & Environment Management
+### Designing Backend Code That Runs Safely Across Environments
+
+---
+
+## Why Configuration Must Not Live in Code
+
+Backend systems run across multiple environments:
+- development
+- staging
+- production
+
+Hardcoding environment-specific values makes systems fragile and unsafe.
+
+Configuration must be separated from code so behavior remains consistent while environments change.
+
+---
+
+## Centralized Configuration Pattern
+
+This project uses a single configuration module responsible for:
+- reading environment variables
+- converting types
+- validating required values
+- failing fast on invalid configuration
+
+All services import configuration instead of redefining it.
+
+---
+
+## Environment Variables and Safety
+
+Environment variables:
+- keep secrets out of source control
+- allow safe environment switching
+- support containerized and cloud deployments
+
+Invalid or missing configuration causes the application to exit immediately.
+
+---
+
+## Startup Fail-Fast Strategy
+
+Configuration errors are handled only at application startup.
+
+The application:
+- never starts in an invalid state
+- exits with a clear error message
+- avoids undefined behavior later in execution
+
+This mirrors real backend application initialization flows.
+
+---
+
+## Project Structure
+
+- **config.py**  
+  Centralized configuration loading and validation.
+
+- **database_service.py**  
+  Service layer that consumes configuration without redefining it.
+
+- **app.py**  
+  Application entry point and startup error boundary.
+
+---
+
+## Backend Relevance
+
+This pattern is used in:
+- API servers
+- background workers
+- microservices
+- containerized applications
+
+Separating configuration from code is a non-negotiable backend practice.
+
+---
