@@ -1,0 +1,20 @@
+Python is a high-level programming language known for its readability.
+
+It was created by Guido van Rossum and first released in 1991.
+Many developers enjoy Python because it emphasizes simplicity.
+
+    
+Python is often used for scripting, automation, and data analysis.
+It also plays a big role in machine learning and web development.
+
+One of Python’s strengths is its large standard library.
+
+This line exists to test counting.
+Another line follows it.
+
+       
+The Zen of Python says:
+Simple is better than complex.
+Complex is better than complicated.
+
+End of sample file.

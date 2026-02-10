@@ -809,3 +809,79 @@ This pattern is used in:
 Separating configuration from code is a non-negotiable backend practice.
 
 ---
+
+## Day 13 – File I/O, Streams & Resource Management
+### Writing Backend-Safe File Handling Code
+
+---
+
+## Why Resource Management Matters in Backend Systems
+
+Backend services constantly interact with files and streams.
+
+Careless file handling leads to:
+- file descriptor leaks
+- memory spikes
+- corrupted data
+- silent failures
+
+Safe I/O patterns are mandatory in production systems.
+
+---
+
+## Why `with` Is Non-Optional
+
+The `with` statement guarantees that resources are released properly,
+even when exceptions occur.
+
+Manual open/close patterns are error-prone and unacceptable in backend code.
+
+All file operations in this project use context managers.
+
+---
+
+## Streaming vs Bulk Reads
+
+Bulk reads (`read()`, `readlines()`) load entire files into memory.
+
+Streaming processes files line-by-line, keeping memory usage constant.
+This is required for large files such as logs and data exports.
+
+---
+
+## Error-Safe File Operations
+
+File operations fail for many reasons:
+- missing files
+- permission issues
+- corrupted paths
+
+This project handles failures explicitly and never crashes silently.
+
+---
+
+## Project Structure
+
+- **log_writer.py**  
+  Safely appends timestamped log entries to a file.
+
+- **file_stream_processor.py**  
+  Streams a text file line-by-line without loading it into memory.
+
+- **config_backup.py**  
+  Backs up configuration files safely with proper error handling.
+
+---
+
+## Backend Relevance
+
+These patterns appear directly in:
+- logging systems
+- backup jobs
+- batch processing
+- migration scripts
+- operational tooling
+
+Resource discipline is a core backend engineering skill.
+
+---
