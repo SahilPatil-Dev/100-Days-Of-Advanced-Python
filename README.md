@@ -885,3 +885,65 @@ These patterns appear directly in:
 Resource discipline is a core backend engineering skill.
 
 ---
+
+## Day 14 – Iterators, Generators & Lazy Evaluation
+### Scaling Backend Code Without Wasting Memory
+
+---
+
+## Eager vs Lazy Evaluation
+
+Eager evaluation loads all data into memory before processing.
+
+Lazy evaluation produces data one item at a time and processes it immediately.
+
+Backend systems prefer lazy evaluation because data sizes are often large or unbounded.
+
+---
+
+## Why Generators Matter in Backend Systems
+
+Generators:
+- keep memory usage constant
+- support streaming workloads
+- allow composable data pipelines
+- scale naturally with data size
+
+They are fundamental to log processing, ETL jobs, and paginated APIs.
+
+---
+
+## Streaming Over Bulk Processing
+
+Bulk reads load entire datasets into memory and risk crashes.
+
+Streaming processes data incrementally and safely, even for very large inputs.
+
+This project intentionally avoids materializing intermediate lists.
+
+---
+
+## Project Structure
+
+- **log_stream.py**  
+  Lazily reads log files line-by-line using a generator.
+
+- **pagination.py**  
+  Simulates paginated access to large datasets using generators.
+
+- **lazy_pipeline.py**  
+  Demonstrates a fully lazy data pipeline with multiple stages.
+
+---
+
+## Backend Relevance
+
+These patterns appear directly in:
+- log ingestion systems
+- streaming APIs
+- batch processing pipelines
+- analytics backends
+
+Understanding lazy evaluation is required to write scalable backend code.
+
+---
