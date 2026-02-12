@@ -947,3 +947,57 @@ These patterns appear directly in:
 Understanding lazy evaluation is required to write scalable backend code.
 
 ---
+
+## Day 15 – Concurrency Mental Models
+### Threads vs Processes vs Blocking Code
+
+---
+
+## Concurrency vs Parallelism
+
+Concurrency allows tasks to progress together.
+Parallelism allows tasks to run at the same time on multiple CPU cores.
+
+Threading provides concurrency.
+Multiprocessing provides parallelism.
+
+---
+
+## Blocking vs Non-Blocking
+
+Blocking operations (like sleep or network calls) pause execution.
+
+Threading helps with I/O-bound tasks because threads can switch while waiting.
+
+---
+
+## CPU-bound vs I/O-bound
+
+CPU-bound tasks require multiprocessing to bypass Python’s GIL.
+
+I/O-bound tasks benefit from threading due to wait times.
+
+---
+
+## GIL (High-Level Overview)
+
+The Global Interpreter Lock (GIL) allows only one thread to execute Python bytecode at a time.
+
+This limits CPU parallelism in threads.
+
+Multiprocessing avoids this limitation by running separate Python processes.
+
+---
+
+## Project Structure
+
+- threading_demo.py  
+  Demonstrates concurrency benefits for I/O-bound tasks.
+
+- multiprocessing_demo.py  
+  Demonstrates parallelism benefits for CPU-bound tasks.
+
+- task_executor.py  
+  Simulates backend decision-making for task execution strategy.
+
+---
