@@ -1001,3 +1001,77 @@ Multiprocessing avoids this limitation by running separate Python processes.
   Simulates backend decision-making for task execution strategy.
 
 ---
+
+## Day 16 – Async & Await (Event Loop Fundamentals)
+
+---
+
+## What Is Async in Python?
+
+Async in Python is cooperative concurrency.
+
+Coroutines voluntarily yield control using `await`, allowing the event loop to switch between tasks efficiently.
+
+Async does not provide CPU parallelism.
+
+---
+
+## What the Event Loop Does
+
+The event loop:
+- schedules coroutines
+- pauses tasks when they await I/O
+- resumes them when ready
+
+Only one coroutine runs at a time inside a single thread.
+
+---
+
+## Sequential vs Concurrent Execution
+
+Sequential execution waits for each task to complete.
+
+Using `asyncio.gather` allows multiple I/O-bound tasks to run concurrently within the event loop.
+
+This reduces total waiting time without using threads.
+
+---
+
+## Blocking Inside Async (Critical Mistake)
+
+Using blocking calls like `time.sleep()` inside async functions blocks the entire event loop.
+
+This eliminates concurrency and defeats the purpose of async.
+
+Only non-blocking operations (e.g., `await asyncio.sleep`) should be used.
+
+---
+
+## Async vs Multiprocessing
+
+Async:
+- Good for I/O-bound tasks
+- Single-threaded
+- Cooperative scheduling
+
+Multiprocessing:
+- Good for CPU-bound tasks
+- Uses multiple cores
+- True parallelism
+
+Understanding the difference prevents scaling mistakes.
+
+---
+
+## Project Structure
+
+- async_demo.py  
+  Demonstrates sequential vs concurrent async execution.
+
+- blocking_mistake.py  
+  Shows how blocking code destroys async performance.
+
+- async_task_runner.py  
+  Simulates concurrent API-style requests using the event loop.
+
+---
