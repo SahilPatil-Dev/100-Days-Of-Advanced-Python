@@ -1075,3 +1075,53 @@ Understanding the difference prevents scaling mistakes.
   Simulates concurrent API-style requests using the event loop.
 
 ---
+
+## Day 17 – Async Patterns & Pitfalls
+
+---
+
+## Async Exception Propagation
+
+By default, asyncio.gather stops execution when one task fails.
+
+Using return_exceptions=True allows all tasks to complete and returns exceptions as values.
+
+This enables controlled failure handling strategies.
+
+---
+
+## Task Cancellation
+
+Cancellation raises asyncio.CancelledError.
+
+Tasks must catch and handle this exception to clean up resources properly.
+
+Ignoring cancellation can corrupt state or leak resources.
+
+---
+
+## Race Conditions in Async Code
+
+Even in a single-threaded event loop, race conditions occur when tasks yield control.
+
+Shared mutable state must be protected using asyncio.Lock.
+
+---
+
+## Fail-Fast vs Fail-Safe
+
+Fail-fast:
+- Stop immediately when something breaks.
+
+Fail-safe:
+- Allow partial success and collect errors.
+
+Backend systems must choose intentionally.
+
+---
+
+## Project Structure
+
+- async_error_handling.py
+- task_cancellation.py
+- async_race_condition.py
