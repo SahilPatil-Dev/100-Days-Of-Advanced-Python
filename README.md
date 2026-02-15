@@ -1125,3 +1125,55 @@ Backend systems must choose intentionally.
 - async_error_handling.py
 - task_cancellation.py
 - async_race_condition.py
+
+## Day 18 – Command-Line Interfaces & Entry Points
+
+---
+
+## Why CLI Tools Matter in Backend Roles
+
+Backend engineers frequently build:
+- migration scripts
+- data processing tools
+- admin utilities
+- deployment scripts
+
+These tools must behave predictably, validate input correctly, and fail safely.
+
+---
+
+## Argument Parsing and Reliability
+
+Using argparse:
+- enforces required inputs
+- validates allowed values
+- converts types safely
+- prevents fragile manual input handling
+
+---
+
+## Clean Entry Points
+
+All scripts use:
+
+if __name__ == "__main__":
+
+This ensures:
+- reusable logic
+- testable functions
+- clean execution boundaries
+
+---
+
+## Proper Exit Handling
+
+Errors result in non-zero exit codes.
+This allows integration with automation tools and CI pipelines.
+
+---
+
+## Project Structure
+
+- file_cli.py
+- user_cli.py
+- admin_tool.py
