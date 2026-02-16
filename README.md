@@ -1177,3 +1177,69 @@ This allows integration with automation tools and CI pipelines.
 - file_cli.py
 - user_cli.py
 - admin_tool.py
+
+## Day 19 – JSON, APIs & HTTP Fundamentals
+
+---
+
+## HTTP Request-Response Cycle
+
+An HTTP request consists of:
+- Method (GET, POST, etc.)
+- URL
+- Headers
+- Optional body
+
+The server responds with:
+- Status code (200, 400, 404, 500, etc.)
+- Headers
+- Response body (often JSON)
+
+Backend engineers must understand this before using frameworks.
+
+---
+
+## Why JSON Is Used in APIs
+
+JSON:
+- Is language-independent
+- Is lightweight
+- Maps naturally to dictionaries in Python
+
+Serialization converts Python objects to JSON strings.
+Deserialization converts JSON strings back into Python objects.
+
+---
+
+## Validating External Responses
+
+External APIs:
+- May return unexpected data
+- May fail with non-200 status codes
+- May return invalid JSON
+
+Clients must:
+- Check status codes
+- Handle network errors
+- Validate response structure
+
+Blind parsing leads to production failures.
+
+---
+
+## How This Prepares for FastAPI
+
+Frameworks like FastAPI:
+- Automatically parse JSON bodies
+- Automatically serialize responses
+- Manage HTTP request/response lifecycle
+
+Understanding these fundamentals ensures proper backend reasoning beyond framework usage.
+
+---
+
+## Project Structure
+
+- json_handler.py
+- api_client.py
+- user_service_client.py
