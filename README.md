@@ -1243,3 +1243,70 @@ Understanding these fundamentals ensures proper backend reasoning beyond framewo
 - json_handler.py
 - api_client.py
 - user_service_client.py
+
+## Day 20 – API Design Principles
+
+---
+
+## Resource-Based Design
+
+APIs should be designed around resources (nouns), not actions (verbs).
+
+Example:
+- /users
+- /orders
+- /products
+
+This creates predictable and scalable API structures.
+
+---
+
+## HTTP Method Semantics
+
+GET     -> Retrieve data
+POST    -> Create resource
+PUT     -> Update resource
+DELETE  -> Remove resource
+
+Correct semantics prevent confusion and long-term maintenance issues.
+
+---
+
+## Consistent Response Structure
+
+All responses follow a standardized format:
+
+Success:
+{
+  "success": true,
+  "data": {},
+  "message": ""
+}
+
+Error:
+{
+  "success": false,
+  "error": "Error message"
+}
+
+Consistency simplifies frontend integration and debugging.
+
+---
+
+## Why This Matters
+
+Poor API design leads to:
+- inconsistent responses
+- unclear error handling
+- difficult client integration
+- long-term technical debt
+
+Designing first prevents these problems.
+
+---
+
+## Preparation for Frameworks
+
+Frameworks like FastAPI implement routing and validation.
+
+Understanding API design principles ensures correct usage of frameworks rather than blind dependency.
