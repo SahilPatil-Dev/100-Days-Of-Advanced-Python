@@ -1310,3 +1310,63 @@ Designing first prevents these problems.
 Frameworks like FastAPI implement routing and validation.
 
 Understanding API design principles ensures correct usage of frameworks rather than blind dependency.
+
+## Day 21 – Data Structure Tradeoffs
+
+---
+
+## Why Data Structure Choice Matters
+
+Backend systems process large datasets and handle frequent lookups.
+
+Choosing the wrong structure can cause performance degradation at scale.
+
+---
+
+## List vs Set
+
+List:
+- Ordered
+- Allows duplicates
+- Membership check is O(n)
+
+Set:
+- Unordered
+- Unique elements only
+- Membership check is O(1) average
+
+Sets are ideal for:
+- Permission checks
+- Deduplication
+- Fast membership tests
+
+---
+
+## Deduplication Strategy
+
+Naive approach:
+- Uses list membership
+- O(n²)
+
+Optimized approach:
+- Uses a set to track seen values
+- O(n)
+- Preserves order
+
+---
+
+## Dict Internals
+
+Dictionaries use hashing to achieve average O(1) lookup.
+
+Hash collisions can degrade performance, but Python handles them efficiently.
+
+---
+
+## When Not to Over-Optimize
+
+Small datasets do not justify complexity.
+
+Clarity should come before micro-optimizations.
+
+Performance decisions should be benchmark-driven.
