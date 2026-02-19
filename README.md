@@ -1370,3 +1370,41 @@ Small datasets do not justify complexity.
 Clarity should come before micro-optimizations.
 
 Performance decisions should be benchmark-driven.
+
+## Day 22 – Algorithmic Thinking for Backend
+
+---
+
+## Why Naive Logic Fails at Scale
+
+Nested loops cause O(n²) behavior.
+For small datasets this is fine.
+For large datasets this becomes catastrophic.
+
+Backend systems must scale predictably.
+
+---
+
+## Using Sets and Dicts to Reduce Complexity
+
+Sets provide O(1) membership checks.
+Dictionaries allow constant-time lookups.
+
+These structures convert multi-pass logic into single-pass solutions.
+
+---
+
+## Real Backend Examples
+
+- Duplicate detection in user systems
+- Transaction reconciliation
+- Log aggregation and analytics
+- Fraud detection patterns
+
+---
+
+## Avoiding Premature Optimization
+
+Small datasets do not require complex logic.
+
+However, developers must recognize inefficient patterns before they become production issues.
