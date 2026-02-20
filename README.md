@@ -1408,3 +1408,48 @@ These structures convert multi-pass logic into single-pass solutions.
 Small datasets do not require complex logic.
 
 However, developers must recognize inefficient patterns before they become production issues.
+
+## Day 23 – Immutability & Defensive Copying
+
+---
+
+## Why Mutation Is Dangerous
+
+Unintended mutation can:
+- Corrupt shared state
+- Leak data between requests
+- Create race conditions
+- Cause unpredictable behavior
+
+Backend systems must control state carefully.
+
+---
+
+## Shallow vs Deep Copy
+
+Shallow copy:
+- Copies outer container only
+- Nested objects remain shared
+
+Deep copy:
+- Recursively copies entire structure
+- Prevents nested mutation leaks
+- More expensive in time and memory
+
+---
+
+## Defensive Copying in APIs
+
+Functions should:
+- Avoid mutating input silently
+- Return new objects when modifying data
+
+This prevents subtle bugs in layered architectures.
+
+---
+
+## Real Backend Example
+
+Shared configuration or cached objects modified unintentionally can affect all users in a running service.
+
+State discipline prevents production incidents.
