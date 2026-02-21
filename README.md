@@ -1453,3 +1453,45 @@ This prevents subtle bugs in layered architectures.
 Shared configuration or cached objects modified unintentionally can affect all users in a running service.
 
 State discipline prevents production incidents.
+
+## Day 24 – Layered Architecture & Separation of Concerns
+
+---
+
+## Layer Responsibilities
+
+Validation Layer:
+Validates input and raises errors.
+
+Service Layer:
+Applies business logic and coordinates workflow.
+
+Repository Layer:
+Handles data persistence.
+
+Entry Layer (main):
+Orchestrates execution only.
+
+---
+
+## Why Layering Matters
+
+Combining validation, storage, and business logic creates tightly coupled systems.
+
+Layered architecture:
+- Improves maintainability
+- Prevents circular dependencies
+- Makes systems testable
+- Allows safe refactoring
+
+---
+
+## Real Framework Mapping
+
+FastAPI:
+- Router → validation → service → repository
+
+Django:
+- Views → forms/serializers → services → models
+
+Clean separation scales better than monolithic files.
