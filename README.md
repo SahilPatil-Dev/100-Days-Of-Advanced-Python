@@ -1495,3 +1495,35 @@ Django:
 - Views → forms/serializers → services → models
 
 Clean separation scales better than monolithic files.
+
+## Day 25 – Refactoring & Code Quality
+
+---
+
+## Improvements Made
+
+- Extracted normalization logic from service layer
+- Removed repeated condition checks
+- Improved function naming clarity
+- Reduced duplication using helper functions
+
+---
+
+## Why This Improves Maintainability
+
+Refactoring improves:
+- Readability
+- Testability
+- Extendability
+- Reduced technical debt
+
+Behavior remained unchanged during refactoring.
+
+---
+
+## Refactoring Discipline
+
+Refactoring is not rewriting.
+It is improving structure while preserving functionality.
+
+This reduces long-term technical debt and improves team productivity.
