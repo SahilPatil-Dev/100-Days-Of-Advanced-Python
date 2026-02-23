@@ -1527,3 +1527,51 @@ Refactoring is not rewriting.
 It is improving structure while preserving functionality.
 
 This reduces long-term technical debt and improves team productivity.
+
+## Day 26 – Data Modeling & Clean Object Design
+
+---
+
+## Overview
+
+Focused on practical object design using dataclasses with clear domain intent.
+
+---
+
+## Key Concepts
+
+### Entity vs Value Object
+
+- **Entity (User, Order)**  
+  Has identity and can change over time.
+
+- **Value Object (Money)**  
+  Immutable and defined by value, not identity.
+
+---
+
+## Why Dataclasses?
+
+- Reduce boilerplate
+- Improve readability
+- Encourage clean data modeling
+- Support immutability with `frozen=True`
+
+---
+
+## Why Immutability Matters
+
+Financial values must not mutate unexpectedly.
+Immutable models prevent subtle state corruption bugs.
+
+---
+
+## Encapsulation
+
+- Validation lives inside the model
+- State transitions are controlled
+- Internal collections protected with defensive copying
+
+---
+
+Clean backend systems begin with clear domain models.
