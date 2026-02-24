@@ -1575,3 +1575,40 @@ Immutable models prevent subtle state corruption bugs.
 ---
 
 Clean backend systems begin with clear domain models.
+
+## Day 27 – Interfaces & Dependency Inversion
+
+---
+
+## Overview
+
+Focused on dependency inversion and abstraction to improve extensibility and testability.
+
+---
+
+## Dependency Inversion in Practice
+
+High-level modules (services) should not depend on low-level modules (database, payment gateway).
+
+Both depend on abstractions.
+
+---
+
+## Why Injection Matters
+
+Constructor injection allows:
+- Swapping implementations
+- Easier testing
+- Cleaner architecture
+- Reduced coupling
+
+---
+
+## Real-World Mapping
+
+- FastAPI dependency injection
+- Database repository swapping
+- Payment gateway integration
+- External service abstraction
+
+Clean backend systems are built on abstractions, not concrete implementations.
