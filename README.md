@@ -1612,3 +1612,49 @@ Constructor injection allows:
 - External service abstraction
 
 Clean backend systems are built on abstractions, not concrete implementations.
+
+## Day 28 – Error Boundaries & Global Error Strategy
+
+---
+
+## Overview
+
+Designed a centralized error handling strategy across architectural layers.
+
+---
+
+## Structured Exception Hierarchy
+
+- AppError (base)
+- ValidationError
+- NotFoundError
+- InfrastructureError
+
+This separates domain failures from system failures.
+
+---
+
+## Error Propagation Strategy
+
+Repository → Service → Entry Point
+
+- Repository raises InfrastructureError
+- Service raises ValidationError or NotFoundError
+- Entry point formats responses
+
+No silent swallowing of exceptions.
+
+---
+
+## Centralized Error Formatting
+
+A single handler converts exceptions into structured response dictionaries.
+
+This mirrors real-world:
+- FastAPI exception handlers
+- Django middleware
+- Production API error formatting
+
+---
+
+Clean systems fail predictably, not chaotically.
