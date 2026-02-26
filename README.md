@@ -1658,3 +1658,37 @@ This mirrors real-world:
 ---
 
 Clean systems fail predictably, not chaotically.
+
+## Day 29 – Profiling & Performance Awareness
+
+---
+
+## Overview
+
+Focused on performance measurement using:
+
+- time.perf_counter()
+- cProfile
+- pstats analysis
+
+---
+
+## Key Findings
+
+1. Nested loops caused exponential slowdowns.
+2. Data structure choice (list vs set) drastically affects membership checks.
+3. Profiling revealed hot paths clearly.
+4. Optimized version reduced cumulative execution time significantly.
+
+---
+
+## Important Lessons
+
+- Measure before optimizing.
+- Micro-optimizations rarely matter.
+- Architecture-level improvements usually yield larger gains.
+- Premature optimization wastes engineering time.
+
+---
+
+Backend performance must be evidence-based, not assumption-based.
