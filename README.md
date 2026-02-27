@@ -1692,3 +1692,162 @@ Focused on performance measurement using:
 ---
 
 Backend performance must be evidence-based, not assumption-based.
+
+## Day 30 – Core System Build (Task Manager Backend Simulation)
+
+---
+
+## Overview
+
+Day 30 consolidates everything learned during Core Phase (Day 1–29) into a single cohesive backend-style application.
+
+This task manager system was designed using:
+
+- Layered architecture
+- Dependency injection
+- Structured exception hierarchy
+- Centralized error formatting
+- Input validation discipline
+- Clean separation of concerns
+
+The goal was not to “make it work”, but to design it correctly.
+
+---
+
+## Architecture Structure
+
+Main → Service → Repository  
+         ↑  
+     Validators  
+
+Error Flow:
+
+Repository → Service → Entry Point → Response Formatter
+
+---
+
+## Layer Responsibilities
+
+### `schemas.py`
+Defines the Task domain model.
+
+### `validators.py`
+Handles input validation and raises `ValidationError`.
+
+### `repository.py`
+Responsible only for data storage and retrieval.
+Raises `InfrastructureError` when needed.
+
+### `service.py`
+Contains business logic:
+- Create task
+- Complete task
+- Retrieve task(s)
+
+Raises:
+- `ValidationError`
+- `NotFoundError`
+
+### `exceptions.py`
+Defines structured exception hierarchy:
+- `AppError`
+- `ValidationError`
+- `NotFoundError`
+- `InfrastructureError`
+
+### `response.py`
+Centralized response formatting.
+Only this layer converts exceptions into structured output.
+
+### `main.py`
+Acts as application boundary.
+- Orchestrates flow
+- Catches `AppError`
+- Delegates formatting to response layer
+
+No business logic exists in this layer.
+
+---
+
+## Key Architectural Decisions
+
+### 1. Dependency Injection
+The `TaskService` receives the repository via constructor.
+No internal instantiation.
+This enables easy swapping of storage implementations.
+
+### 2. Centralized Error Handling
+Only the entry layer formats responses.
+Services and repositories raise structured exceptions.
+
+### 3. No Global State Leakage
+Repository and service are instantiated inside `main()`.
+Each run represents a clean application lifecycle.
+
+### 4. Structured Responses
+All outputs follow consistent structure:
+
+Success:
+{
+  "success": true,
+  "data": {...},
+  "message": ""
+}
+
+Error:
+{
+  "success": false,
+  "error": "...",
+  "status_code": ...
+}
+
+---
+
+## How This Maps to Real Backend Frameworks
+
+This architecture mirrors:
+
+- FastAPI service layers
+- Django views + services
+- Express middleware flow
+
+Mapping:
+
+- `main.py` → Controller / Router
+- `service.py` → Business layer
+- `repository.py` → Data access layer
+- `response.py` → Global exception handler
+- `validators.py` → Request validation
+- `schemas.py` → Domain models
+
+---
+
+## What This Demonstrates
+
+- Clean layering discipline
+- Error boundary awareness
+- Dependency inversion in practice
+- Separation of domain vs infrastructure errors
+- Structured API-style responses
+- Extensible system design
+
+---
+
+## Core Phase Summary (Day 1–30)
+
+This system integrates concepts from:
+
+- Defensive programming
+- Structured exceptions
+- Async mental models
+- Data modeling
+- Dependency inversion
+- Profiling awareness
+- API design principles
+- Refactoring discipline
+
+The objective was architectural clarity, not feature volume.
+
+---
+
+Clean backend systems are built intentionally — not accidentally.
