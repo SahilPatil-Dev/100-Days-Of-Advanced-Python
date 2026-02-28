@@ -1851,3 +1851,46 @@ The objective was architectural clarity, not feature volume.
 ---
 
 Clean backend systems are built intentionally — not accidentally.
+
+## Day 31 – NumPy Foundations & Vectorized Thinking
+
+---
+
+## Overview
+
+Focused on understanding why NumPy outperforms Python loops for large-scale numeric computation.
+
+Benchmarked loop-based multiplication against NumPy vectorized operations using 1 million elements.
+
+---
+
+## Key Insights
+
+1. NumPy operations are implemented in optimized C.
+2. Vectorization removes Python interpreter overhead.
+3. Memory layout is contiguous, improving cache efficiency.
+4. Large-scale numeric operations should avoid Python loops.
+
+---
+
+## When to Use NumPy
+
+- Large numeric datasets
+- Mathematical transformations
+- Log aggregation
+- Metrics processing
+- Data-heavy backend computations
+
+---
+
+## When Pure Python Is Fine
+
+- Small datasets
+- Business logic
+- Control-heavy workflows
+- I/O-bound operations
+
+---
+
+Vectorization is not about shorter code.
+It is about computational efficiency.
