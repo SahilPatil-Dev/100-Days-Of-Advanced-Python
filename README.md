@@ -1894,3 +1894,58 @@ Benchmarked loop-based multiplication against NumPy vectorized operations using 
 
 Vectorization is not about shorter code.
 It is about computational efficiency.
+
+## Day 32 – Indexing, Slicing & Broadcasting
+
+---
+
+## Overview
+
+Focused on advanced NumPy manipulation using slicing, boolean indexing, and broadcasting.
+
+The goal was to eliminate Python loops and rely entirely on vectorized operations.
+
+---
+
+## Key Concepts
+
+### Advanced Slicing
+- Column selection using `arr[:, col]`
+- Row selection using `arr[row, :]`
+- Sub-matrix extraction using slicing ranges
+
+### Boolean Indexing
+Efficient filtering without loops.
+
+Example:
+`arr[arr > threshold]`
+
+### Broadcasting
+NumPy automatically expands dimensions when shapes are compatible.
+
+Rule:
+Two dimensions are compatible if they are equal or one of them is 1.
+
+Broadcasting removes the need for explicit iteration.
+
+---
+
+## Common Shape Mistakes
+
+- Mismatched dimensions
+- Forgetting to reshape column vectors
+- Confusing row vs column broadcasting
+
+---
+
+## Why This Matters for Backend
+
+Vectorized thinking applies to:
+
+- Log aggregation
+- Metrics normalization
+- Batch transformations
+- Data preprocessing
+
+Loops do not scale.
+Broadcasting does.
