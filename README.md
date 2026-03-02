@@ -1949,3 +1949,61 @@ Vectorized thinking applies to:
 
 Loops do not scale.
 Broadcasting does.
+
+## Day 33 – Data Cleaning & Transformation (NumPy)
+
+---
+
+## Overview
+
+Focused on cleaning and transforming messy numeric datasets using NumPy vectorized operations.
+
+Real-world systems rarely operate on perfect input.
+
+---
+
+## Key Concepts
+
+### Handling Missing Values
+Used:
+- np.nan
+- np.nanmean
+- np.isnan
+
+Replaced missing values using column-wise means without loops.
+
+---
+
+### Conditional Transformations
+Used boolean masking to:
+- Replace negative values
+- Cap extreme values
+
+Vectorized masking scales efficiently.
+
+---
+
+### Log Metrics Processing
+Simulated backend response time cleaning:
+- Removed invalid values
+- Calculated average
+- Computed 95th percentile
+- Extracted maximum valid metric
+
+---
+
+## Why This Matters in Backend Systems
+
+Backend systems must:
+
+- Sanitize metrics
+- Clean logs
+- Remove corrupt inputs
+- Compute aggregates safely
+
+Vectorized cleaning is faster, safer, and scalable.
+
+---
+
+Data is rarely clean.
+Systems must make it usable.
