@@ -2007,3 +2007,55 @@ Vectorized cleaning is faster, safer, and scalable.
 
 Data is rarely clean.
 Systems must make it usable.
+
+## Day 34 – Pandas Fundamentals (Structured Data Handling)
+
+---
+
+## Overview
+
+Focused on understanding Pandas DataFrames as structured, labeled tabular data.
+
+Unlike NumPy arrays, DataFrames provide:
+
+- Column labels
+- Row index
+- Structured filtering
+- Aggregation capabilities
+
+---
+
+## Key Concepts
+
+### DataFrame Creation
+Created structured data manually and via CSV ingestion.
+
+### Indexing
+- `.loc` → label-based indexing
+- `.iloc` → position-based indexing
+
+Understanding this difference prevents subtle bugs.
+
+### Filtering
+Used boolean conditions directly on DataFrames.
+
+### Aggregation
+Performed revenue calculations and product-level summaries.
+
+---
+
+## Why Backend Engineers Use Pandas
+
+Backend systems often:
+
+- Export database records
+- Process analytics
+- Prepare reports
+- Analyze logs
+- Build dashboards
+
+Pandas enables structured transformation without manual loops.
+
+---
+
+Structured data requires structured thinking.
