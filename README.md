@@ -2059,3 +2059,56 @@ Pandas enables structured transformation without manual loops.
 ---
 
 Structured data requires structured thinking.
+
+## Day 35 – GroupBy & Aggregations (Backend Reporting Logic)
+
+---
+
+## Overview
+
+Focused on using Pandas `groupby()` for structured data summarization.
+
+This mirrors real backend analytics and reporting systems.
+
+---
+
+## Key Concepts
+
+### Grouping Data
+Used `groupby()` to bucket records logically by product, user, and endpoint.
+
+### Aggregations
+Applied:
+- sum
+- mean
+- count
+- size
+
+Performed multiple aggregations in a single pipeline.
+
+### Sorting & Index Handling
+Used:
+- reset_index()
+- sort_values()
+
+Ensured results are dashboard-ready.
+
+---
+
+## Why This Matters
+
+Backend systems often require:
+
+- Metrics dashboards
+- Admin reports
+- Log summarization
+- Revenue calculations
+
+Manual loops do not scale.
+Vectorized aggregations do.
+
+---
+
+Group first.
+Aggregate second.
+Never loop when Pandas can compute.
