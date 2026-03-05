@@ -2112,3 +2112,74 @@ Vectorized aggregations do.
 Group first.
 Aggregate second.
 Never loop when Pandas can compute.
+
+## Day 36 – Data Joining & Merging (Combining Data Sources)
+
+---
+
+## Overview
+
+Focused on combining structured datasets using Pandas `merge()`.
+
+Real backend analytics pipelines rarely operate on a single dataset.
+Information is typically distributed across multiple sources such as:
+
+- Users tables
+- Orders tables
+- Payments records
+- Log datasets
+
+Joining these datasets is a fundamental data engineering skill.
+
+---
+
+## Key Concepts
+
+### Dataset Merging
+
+Used `pd.merge()` to combine datasets based on shared keys.
+
+Example:
+
+Users + Orders → Customer purchase dataset
+
+---
+
+### Join Types
+
+**Inner Join**
+
+Returns rows where matching keys exist in both datasets.
+
+**Left Join**
+
+Returns all rows from the left dataset and fills missing matches with `NaN`.
+
+---
+
+### Aggregation After Join
+
+After merging datasets, aggregation was used to compute:
+
+- Total revenue per user
+- Order counts
+- Average order value
+
+This mirrors real analytics workflows.
+
+---
+
+## Real Backend Applications
+
+Joining datasets is common when building:
+
+- Analytics dashboards
+- Customer purchase reports
+- Payment reconciliation systems
+- Admin reporting tools
+
+---
+
+Data pipelines usually follow this pattern:
+
+load → merge → clean → aggregate
