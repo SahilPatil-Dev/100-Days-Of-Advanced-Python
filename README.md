@@ -2183,3 +2183,64 @@ Joining datasets is common when building:
 Data pipelines usually follow this pattern:
 
 load → merge → clean → aggregate
+
+## Day 37 – Data Reshaping (Pivoting & Melting)
+
+### Overview
+
+Real-world datasets rarely arrive in the format required for analysis.
+Reshaping data is often necessary before aggregation or visualization.
+
+This project demonstrates how to transform datasets between **long format and wide format** using Pandas.
+
+---
+
+### Key Concepts
+
+#### Long vs Wide Format
+
+Long Format:
+Each row represents a single observation.
+
+Wide Format:
+Values are spread across multiple columns.
+
+Many analytics tools prefer long format for flexibility.
+
+---
+
+### Pivot Tables
+
+Pivot tables summarize data by transforming rows into columns.
+
+Example use cases:
+- Monthly sales reports
+- Dashboard metrics
+- KPI summaries
+
+---
+
+### Melt Operation
+
+`pd.melt()` converts wide datasets into long format.
+
+This enables:
+- easier aggregation
+- flexible filtering
+- compatibility with visualization tools
+
+---
+
+### Backend Analytics Example
+
+The analytics project simulates:
+
+- endpoint response times
+- request counts
+- aggregated monitoring metrics
+
+These patterns appear in:
+
+- monitoring dashboards
+- API performance analysis
+- system health reporting
