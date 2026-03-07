@@ -2244,3 +2244,73 @@ These patterns appear in:
 - monitoring dashboards
 - API performance analysis
 - system health reporting
+
+## Day 38 – Time Series Analysis with Pandas
+
+### Overview
+
+Modern backend systems generate large volumes of timestamped data such as:
+
+- API logs
+- request metrics
+- system monitoring events
+- traffic analytics
+
+Analyzing this data requires proper time-series handling.
+
+---
+
+### Key Concepts
+
+**Datetime Parsing**
+
+Converted timestamp strings into datetime objects using `pd.to_datetime()`.
+
+This enables time-aware operations.
+
+---
+
+**Datetime Components**
+
+Extracted time elements such as:
+
+- hour
+- day
+
+These are useful for analytics dashboards and monitoring systems.
+
+---
+
+**Time Filtering**
+
+Filtered logs based on:
+
+- last 24 hours
+- specific dates
+
+This is common in operational analytics.
+
+---
+
+**Resampling**
+
+Used `resample()` to aggregate metrics over time intervals.
+
+Example use cases:
+
+- requests per hour
+- average latency per minute
+- error rate monitoring
+
+---
+
+### Backend Applications
+
+Time-series analysis is fundamental for:
+
+- API traffic monitoring
+- observability dashboards
+- performance metrics
+- incident investigation
+
+Structured time analysis enables meaningful insights from raw logs.
