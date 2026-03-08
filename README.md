@@ -2314,3 +2314,56 @@ Time-series analysis is fundamental for:
 - incident investigation
 
 Structured time analysis enables meaningful insights from raw logs.
+
+## Day 39 – Data Visualization with Matplotlib
+
+### Overview
+
+Data visualization helps transform raw numbers into insights.
+
+While backend engineers may not build dashboards daily, visualization is extremely useful for:
+
+- debugging performance issues
+- analyzing logs
+- understanding traffic patterns
+- identifying system bottlenecks
+
+---
+
+### Key Visualizations
+
+**Line Charts**
+
+Used to visualize trends over time.
+
+Example:
+Monthly sales trend.
+
+---
+
+**Bar Charts**
+
+Used to compare categories.
+
+Example:
+Product sales comparison.
+
+---
+
+**Backend Monitoring Example**
+
+A latency visualization was created for API endpoints to identify slow routes.
+
+This mirrors how engineers analyze performance metrics when investigating production issues.
+
+---
+
+### Why Visualization Matters
+
+Visualization quickly reveals patterns that raw tables cannot show, such as:
+
+- traffic spikes
+- latency anomalies
+- uneven system load
+
+This makes debugging and system analysis significantly faster.
