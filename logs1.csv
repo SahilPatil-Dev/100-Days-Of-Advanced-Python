@@ -1,0 +1,6 @@
+timestamp,endpoint,status_code,response_time
+2025-06-01 10:10:00,/api/user,200,120
+2025-06-01 10:12:00,/api/user,500,200
+2025-06-01 11:00:00,/api/order,200,150
+2025-06-01 11:10:00,/api/order,404,100
+2025-06-01 11:20:00,/api/order,200,180

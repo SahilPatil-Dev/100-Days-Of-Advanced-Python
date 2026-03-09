@@ -2367,3 +2367,72 @@ Visualization quickly reveals patterns that raw tables cannot show, such as:
 - uneven system load
 
 This makes debugging and system analysis significantly faster.
+
+## Day 40 – Data Processing Pipeline
+
+### Overview
+
+This project implements a simple backend-style analytics pipeline for API logs.
+
+Real backend systems often process logs using structured pipelines rather than ad-hoc scripts.
+
+Pipeline stages implemented:
+
+1. Load raw logs
+2. Clean invalid data
+3. Transform timestamps
+4. Aggregate analytics metrics
+5. Produce a final report dataset
+
+---
+
+### Pipeline Architecture
+
+```
+raw logs
+   ↓
+load
+   ↓
+clean
+   ↓
+transform
+   ↓
+aggregate
+   ↓
+analytics report
+```
+
+---
+
+### Data Cleaning
+
+The pipeline removes invalid records such as:
+
+- negative response times
+- missing endpoints
+
+Missing response times are replaced with the dataset mean.
+
+---
+
+### Metrics Generated
+
+The final analytics dataset includes:
+
+- requests_per_endpoint
+- average_latency_per_endpoint
+- error_rate_per_endpoint
+
+These metrics are common in:
+
+- API monitoring dashboards
+- backend performance analysis
+- observability systems
+
+---
+
+### Why This Matters
+
+Backend systems continuously generate logs.
+
+Analytics pipelines transform raw logs into actionable metrics used by engineers to monitor system performance.
