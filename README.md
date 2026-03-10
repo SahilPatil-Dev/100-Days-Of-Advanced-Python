@@ -2436,3 +2436,57 @@ These metrics are common in:
 Backend systems continuously generate logs.
 
 Analytics pipelines transform raw logs into actionable metrics used by engineers to monitor system performance.
+
+## Day 41 – Efficient Data Processing (Large Dataset Handling)
+
+### Overview
+
+Large production datasets often exceed available memory.
+Loading them fully into memory can cause crashes or severe performance issues.
+
+This project demonstrates memory-efficient data processing using Pandas chunking.
+
+---
+
+### Key Concepts
+
+Chunked loading allows processing large datasets incrementally.
+
+Instead of loading an entire file:
+
+load → process → discard → repeat
+
+This keeps memory usage stable regardless of dataset size.
+
+---
+
+### Implemented Components
+
+**Chunk Reader**
+
+Demonstrates streaming-style reading using `chunksize`.
+
+**Incremental Metrics**
+
+Computes dataset metrics across chunks without loading the full dataset.
+
+**Large Log Analyzer**
+
+Simulates backend log analytics by calculating:
+
+- total requests per endpoint
+- average latency per endpoint
+- error rates
+
+---
+
+### Real Backend Applications
+
+Chunk processing is used in:
+
+- log analytics systems
+- ETL pipelines
+- batch processing jobs
+- data warehouse ingestion
+
+Efficient data handling is critical when working with large production datasets.
