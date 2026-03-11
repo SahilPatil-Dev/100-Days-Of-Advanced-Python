@@ -1,0 +1,5 @@
+endpoint,requests_per_endpoint,average_latency,error_rate
+/checkout,5,570.0,0.4
+/login,10,138.0,0.0
+/orders,9,396.6666666666667,0.2222222222222222
+/profile,6,103.83333333333333,0.0

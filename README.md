@@ -2490,3 +2490,63 @@ Chunk processing is used in:
 - data warehouse ingestion
 
 Efficient data handling is critical when working with large production datasets.
+
+## Day 42 – Automating Data Pipelines
+
+### Overview
+
+This project demonstrates how to build a structured data processing pipeline that transforms raw logs into analytics reports automatically.
+
+Instead of manually analyzing datasets, automated pipelines process data reliably and consistently.
+
+---
+
+### Pipeline Stages
+
+The workflow follows a typical ETL structure:
+
+```
+load → clean → transform → aggregate → save
+```
+
+---
+
+### Implemented Components
+
+**Load Stage**
+
+Reads structured log datasets and parses timestamps.
+
+**Clean Stage**
+
+Removes invalid records and fills missing values.
+
+**Transform Stage**
+
+Extracts useful features such as hourly timestamps.
+
+**Aggregation Stage**
+
+Computes metrics such as:
+
+- requests_per_endpoint
+- average_latency
+- error_rate
+
+**Report Stage**
+
+Exports the analytics dataset as a CSV report.
+
+---
+
+### Why Automation Matters
+
+Production systems generate logs continuously.
+
+Automated pipelines allow engineers to:
+
+- process logs daily
+- generate monitoring reports
+- power internal analytics dashboards
+
+Many internal tools inside companies are simple automated pipelines triggered by scheduled jobs.
