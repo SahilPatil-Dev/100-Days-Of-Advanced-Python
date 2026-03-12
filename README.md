@@ -2550,3 +2550,48 @@ Automated pipelines allow engineers to:
 - power internal analytics dashboards
 
 Many internal tools inside companies are simple automated pipelines triggered by scheduled jobs.
+
+## Day 43 – Data Validation & Schema Enforcement
+
+### Overview
+
+Data pipelines must validate incoming data before processing it.
+Unvalidated data can corrupt analytics or cause pipeline failures.
+
+This project implements schema validation for an API log analytics pipeline.
+
+---
+
+### Defined Schema
+
+The API log dataset must follow this structure:
+
+timestamp → datetime  
+endpoint → string  
+response_time → float ≥ 0  
+status_code → integer (100–599)
+
+---
+
+### Validation Workflow
+
+1. Load raw dataset
+2. Validate each record against the schema
+3. Separate valid and invalid records
+4. Process only valid records
+5. Generate analytics metrics
+
+---
+
+### Why Validation Matters
+
+Real production data often contains:
+
+- malformed timestamps
+- missing values
+- negative metrics
+- invalid status codes
+
+Without validation, these records can break analytics pipelines.
+
+Schema enforcement ensures pipelines remain reliable and predictable.
