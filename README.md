@@ -2651,3 +2651,62 @@ Typical backend pipeline flow:
 logs → process → validate → aggregate → export
 
 The export stage allows processed data to be shared with dashboards, APIs, and analytics tools.
+
+## Day 45 – Data Quality Checks & Monitoring
+
+### Overview
+
+Data pipelines must verify that their outputs are correct before downstream systems consume them.
+
+Without monitoring, incorrect data can silently corrupt analytics dashboards and business decisions.
+
+This project introduces rule-based data quality checks.
+
+---
+
+### Implemented Checks
+
+**Dataset Sanity Checks**
+
+The pipeline verifies raw input data:
+
+- response_time must be ≥ 0
+- status_code must be between 100–599
+- endpoint must not be empty
+
+Violations generate warnings.
+
+---
+
+**Metrics Validation**
+
+Aggregated metrics are validated to ensure logical correctness:
+
+- avg_latency ≥ 0
+- error_rate ≤ 1
+- total_requests > 0
+
+Violations trigger pipeline errors.
+
+---
+
+### Pipeline Monitoring Summary
+
+The monitoring system reports:
+
+- total_records_checked
+- total_warnings
+- total_errors
+- pipeline_status (PASS / FAIL)
+
+---
+
+### Why Monitoring Matters
+
+Production pipelines often fail due to:
+
+- corrupted input data
+- incorrect aggregations
+- unexpected data spikes
+
+Monitoring ensures problems are detected immediately.
