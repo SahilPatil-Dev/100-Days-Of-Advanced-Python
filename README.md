@@ -2710,3 +2710,46 @@ Production pipelines often fail due to:
 - unexpected data spikes
 
 Monitoring ensures problems are detected immediately.
+
+## Day 46 – Monitoring Visualizations
+
+### Overview
+
+Backend systems generate operational metrics such as request volume, latency, and error rates.  
+Visualization helps engineers quickly interpret these metrics during debugging and production incidents.
+
+This project demonstrates basic monitoring-style visualizations using Matplotlib.
+
+---
+
+### Implemented Charts
+
+**Traffic Trend**
+
+A time-series line chart showing request volume over time.  
+This helps detect sudden traffic spikes or drops.
+
+**Endpoint Latency Comparison**
+
+A bar chart comparing average latency across endpoints.  
+This helps identify slow API endpoints.
+
+**Monitoring Dashboard**
+
+A multi-chart dashboard displaying:
+
+- Requests per hour
+- Average latency per endpoint
+- Error rate per endpoint
+
+---
+
+### Why Monitoring Visualizations Matter
+
+During incidents, engineers rely on visual dashboards to quickly detect:
+
+- traffic surges
+- slow endpoints
+- abnormal error spikes
+
+Visualization transforms raw metrics into actionable operational insights.
