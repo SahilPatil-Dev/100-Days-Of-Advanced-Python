@@ -2753,3 +2753,47 @@ During incidents, engineers rely on visual dashboards to quickly detect:
 - abnormal error spikes
 
 Visualization transforms raw metrics into actionable operational insights.
+
+## Day 47 – Data Pipeline Performance Optimization
+
+### Overview
+
+Large-scale data pipelines must process millions of records efficiently.
+Poorly designed pipelines can waste memory and recompute expensive operations.
+
+This project demonstrates practical optimization strategies for Pandas-based pipelines.
+
+---
+
+### Implemented Optimizations
+
+**1. Column Selection**
+
+Load only required columns instead of the full dataset.
+
+This reduces memory usage and speeds up processing.
+
+**2. Avoid Redundant Computation**
+
+Multiple groupby operations were replaced with a single aggregated computation.
+
+**3. Memory Optimization**
+
+Columns were converted to smaller data types:
+
+- int64 → int32
+- float64 → float32
+
+This significantly reduces memory usage.
+
+---
+
+### Real Backend Use Cases
+
+These optimizations are common in:
+
+- log analytics pipelines
+- ETL jobs processing millions of records
+- batch analytics systems
+
+Efficient pipelines reduce execution time and infrastructure costs.
