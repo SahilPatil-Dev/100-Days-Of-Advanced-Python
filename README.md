@@ -2840,3 +2840,46 @@ Non-deterministic pipelines cause:
 - unreliable business decisions
 
 Professional systems must always produce consistent outputs.
+
+## Day 49 – Testing Data Pipelines
+
+### Overview
+
+Data pipelines must be tested to ensure correctness and reliability.
+
+Pipelines can fail silently by producing incorrect results instead of crashing.
+Testing ensures outputs are validated before being used in production systems.
+
+---
+
+### Implemented Tests
+
+**1. Cleaning Tests**
+
+- Removes negative response times
+- Removes missing endpoints
+- Ensures valid data remains unchanged
+
+**2. Aggregation Tests**
+
+- Verifies total request count
+- Validates average latency calculation
+- Confirms error rate logic
+
+**3. End-to-End Pipeline Test**
+
+- Runs full pipeline
+- Validates output file creation
+- Ensures metrics are correct
+
+---
+
+### Why Testing Matters
+
+Without testing:
+
+- incorrect metrics can go unnoticed
+- dashboards may show wrong data
+- debugging becomes difficult
+
+Testing ensures pipelines are reliable and safe for production use.
