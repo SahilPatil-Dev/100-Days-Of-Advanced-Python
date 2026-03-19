@@ -1,0 +1,26 @@
+[
+  {
+    "endpoint": "/checkout",
+    "total_requests": 5,
+    "avg_latency": 570.0,
+    "error_rate": 0.4
+  },
+  {
+    "endpoint": "/login",
+    "total_requests": 10,
+    "avg_latency": 138.0,
+    "error_rate": 0.0
+  },
+  {
+    "endpoint": "/orders",
+    "total_requests": 9,
+    "avg_latency": 396.6666666666667,
+    "error_rate": 0.2222222222222222
+  },
+  {
+    "endpoint": "/profile",
+    "total_requests": 6,
+    "avg_latency": 103.83333333333333,
+    "error_rate": 0.0
+  }
+]
