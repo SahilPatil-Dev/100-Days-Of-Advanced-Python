@@ -2925,3 +2925,49 @@ This system reflects how backend services process:
 - analytics pipelines
 
 It closely mirrors ETL workflows used in production systems.
+
+## Day 51 – FastAPI Structured Service
+
+### Overview
+
+This project implements a structured FastAPI service following clean architecture principles.
+
+The goal is to separate concerns between routing, validation, and business logic.
+
+---
+
+### Architecture
+
+Request flow:
+
+Route → Schema Validation → Service Layer → Response
+
+---
+
+### Key Design Decisions
+
+- Pydantic models handle strict validation
+- Service layer contains all business logic
+- Routes are kept thin and focused on HTTP handling
+- In-memory storage used for simplicity
+
+---
+
+### Features
+
+- Create user (POST /users)
+- List users (GET /users)
+- Query filtering (min_age)
+- Input validation (email + age)
+
+---
+
+### Why This Matters
+
+This structure allows:
+
+- easy scaling
+- testability
+- maintainability
+
+It mirrors real backend service design used in production systems.
