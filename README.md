@@ -2971,3 +2971,55 @@ This structure allows:
 - maintainability
 
 It mirrors real backend service design used in production systems.
+
+## Day 52 – FastAPI + SQLAlchemy Integration
+
+### Overview
+
+This project upgrades the user service from in-memory storage to a persistent database-backed system using SQLAlchemy.
+
+---
+
+### Architecture
+
+Request flow:
+
+Route → Dependency (DB Session) → Service → ORM Model → Database
+
+---
+
+### Key Concepts
+
+- SQLAlchemy ORM for database interaction
+- Session-per-request lifecycle
+- Dependency injection using FastAPI
+- Separation between schema and database model
+
+---
+
+### Features
+
+- Create user (persistent)
+- List users
+- Unique email constraint
+- Query filtering (min_age)
+
+---
+
+### Why This Matters
+
+This mirrors real backend systems where:
+
+- data must persist across restarts
+- database access must be controlled
+- services must remain decoupled from infrastructure
+
+---
+
+### Future Extension
+
+This structure can be easily extended to:
+
+- PostgreSQL
+- authentication systems
+- scalable microservices
