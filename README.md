@@ -3023,3 +3023,144 @@ This structure can be easily extended to:
 - PostgreSQL
 - authentication systems
 - scalable microservices
+
+## Day 53 – Advanced CRUD & Query Design (FastAPI + SQLAlchemy)
+
+### Overview
+
+This project extends the persistent FastAPI user service by implementing full CRUD operations with proper validation, structured error handling, and efficient database query design.
+
+The focus is on building predictable, production-style API behavior rather than just making endpoints work.
+
+---
+
+### Architecture
+
+Request flow:
+
+Route → Dependency (DB Session) → Service → ORM Model → Database
+
+Key principle:
+
+- No business logic inside routes
+- All logic handled in service layer
+- Database accessed via injected session
+
+---
+
+### Key Concepts
+
+- Full CRUD implementation (Create, Read, Update, Delete)
+- Partial updates using controlled schema
+- Dynamic query filtering at database level
+- Proper error handling and response mapping
+- Idempotent API behavior
+- Separation of concerns (route vs service vs DB)
+
+---
+
+### Features
+
+#### Create User
+- Validates email and age
+- Enforces unique email constraint
+
+#### Get Users
+- Supports query filtering:
+  - min_age
+  - max_age
+- Filtering applied at DB level (no in-memory filtering)
+
+#### Get User by ID
+- Returns user if exists
+- Returns proper error if not found
+
+#### Update User
+- Partial update support (only provided fields updated)
+- Prevents duplicate email updates
+- Validates input before applying changes
+
+#### Delete User
+- Removes user from database
+- Returns success message
+- Handles non-existent user safely
+
+---
+
+### Query Design Approach
+
+- Queries are built dynamically using SQLAlchemy
+- No unnecessary data loading into memory
+- Filters applied directly in database queries
+
+Example:
+
+- GET /users?min_age=20&max_age=30
+→ translated into SQLAlchemy filters
+
+---
+
+### Error Handling Strategy
+
+- Validation / duplicate errors → 400 Bad Request
+- Resource not found → 404 Not Found
+- No silent failures
+- Predictable API responses
+
+---
+
+### Why This Matters
+
+Most real backend systems are built around CRUD operations.
+
+Poor CRUD design leads to:
+
+- inconsistent data
+- performance issues
+- hard-to-maintain APIs
+
+This project demonstrates:
+
+- clean API design
+- safe data updates
+- efficient querying
+- reliable error handling
+
+---
+
+### What Makes This Production-Ready
+
+- Clean layered architecture
+- No business logic in routes
+- Database session handled correctly
+- Validation enforced at schema level
+- Query efficiency considered
+- Edge cases handled explicitly
+
+---
+
+### Future Extensions
+
+This system can be extended with:
+
+- PostgreSQL integration
+- Authentication & authorization (JWT)
+- Pagination & sorting
+- Relationships (orders, profiles, etc.)
+- Async database support
+- API versioning
+
+---
+
+### Summary
+
+This project represents a transition from:
+
+Basic API → Structured backend service
+
+with focus on:
+
+- correctness
+- predictability
+- maintainability
+- scalability
