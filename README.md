@@ -3164,3 +3164,108 @@ with focus on:
 - predictability
 - maintainability
 - scalability
+
+## Day 54 – Database Relationships (FastAPI + SQLAlchemy)
+
+### Overview
+
+This project extends the backend system by introducing relational data modeling using SQLAlchemy.
+
+Users and Orders are connected through a one-to-many relationship, enabling structured and scalable data design.
+
+---
+
+### Architecture
+
+User → Order (1-to-Many)
+
+- One user can have multiple orders
+- Each order belongs to a single user
+
+---
+
+### Key Concepts
+
+- Foreign key constraints
+- ORM relationships using SQLAlchemy
+- Nested API responses
+- Data normalization
+- Querying related data efficiently
+
+---
+
+### Features
+
+#### User Model
+- Stores user information
+- Linked to orders via relationship
+
+#### Order Model
+- Stores order details
+- Linked to user via foreign key
+
+#### API Endpoints
+
+- Create order
+- Get orders for a user
+- Get users with nested orders
+
+---
+
+### Relationship Design
+
+- `User.orders` → list of orders
+- `Order.user` → reference to user
+
+This allows clean access:
+
+- user.orders
+- order.user
+
+---
+
+### Why This Matters
+
+Real backend systems rely on relationships:
+
+- E-commerce (users → orders)
+- Payments (users → transactions)
+- Analytics (users → events)
+
+Without relationships, data becomes:
+
+- duplicated
+- inconsistent
+- hard to query
+
+---
+
+### Query Behavior
+
+- Uses ORM relationships instead of manual joins
+- Efficient querying through SQLAlchemy
+- Avoids redundant data fetching
+
+---
+
+### Future Extensions
+
+- Pagination for orders
+- Advanced joins
+- Index optimization
+- Async queries
+- PostgreSQL migration
+
+---
+
+### Summary
+
+This project moves from:
+
+Single-table API → Relational backend system
+
+and introduces:
+
+- structured data modeling
+- scalable relationships
+- clean nested responses
