@@ -3269,3 +3269,85 @@ and introduces:
 - structured data modeling
 - scalable relationships
 - clean nested responses
+
+## Day 55 – JWT Authentication & Secure APIs
+
+### Overview
+
+This project introduces authentication using JWT and secures API endpoints.
+
+Users can register, log in, and receive access tokens used to authenticate future requests.
+
+---
+
+### Architecture
+
+Flow:
+
+Register → Login → Generate Token → Access Protected Routes
+
+---
+
+### Key Concepts
+
+- Password hashing using bcrypt
+- JWT token generation and validation
+- Dependency-based authentication
+- Securing routes using FastAPI dependencies
+
+---
+
+### Features
+
+- User registration (secure password storage)
+- User login (JWT token issuance)
+- Protected endpoints (require authentication)
+- Token validation and user extraction
+
+---
+
+### Security Design
+
+- Passwords are hashed (never stored as plain text)
+- Tokens expire after a fixed duration
+- Invalid or tampered tokens are rejected
+- Users must exist for token to be valid
+
+---
+
+### Why This Matters
+
+Without authentication:
+
+- APIs are open to abuse
+- Data is not protected
+- System is not production-ready
+
+Authentication ensures:
+
+- identity verification
+- controlled access
+- system security
+
+---
+
+### Future Extensions
+
+- Role-based access control (RBAC)
+- Refresh tokens
+- OAuth integration
+- API rate limiting
+
+---
+
+### Summary
+
+This project upgrades the backend from:
+
+Open API → Secure, authenticated system
+
+and introduces:
+
+- identity management
+- token-based security
+- protected resources
