@@ -3351,3 +3351,90 @@ and introduces:
 - identity management
 - token-based security
 - protected resources
+
+## Day 56 – Role-Based Access Control (RBAC)
+
+### Overview
+
+This project introduces authorization using role-based access control (RBAC).
+
+Users are assigned roles, and API endpoints enforce permissions based on those roles.
+
+---
+
+### Authentication vs Authorization
+
+- Authentication → verifies identity (JWT)
+- Authorization → controls access (roles)
+
+---
+
+### Architecture
+
+Flow:
+
+Request → JWT Validation → Current User → Role Check → Endpoint Access
+
+---
+
+### Key Concepts
+
+- Role-based access control (RBAC)
+- Dependency-based authorization in FastAPI
+- Secure role enforcement from database
+- No client-controlled permissions
+
+---
+
+### Roles
+
+- user → standard access
+- admin → elevated access
+
+---
+
+### Protected Endpoints
+
+Admin-only:
+
+- GET /users
+- DELETE /users/{id}
+
+User-level:
+
+- POST /orders
+- GET /users/{id}/orders
+
+---
+
+### Security Design
+
+- Roles are stored in the database
+- Role is NOT accepted from client input
+- Authorization is enforced via dependencies
+- Unauthorized access returns 403
+
+---
+
+### Why This Matters
+
+Without authorization:
+
+- users can access restricted data
+- privilege escalation becomes possible
+- system security is compromised
+
+RBAC ensures:
+
+- controlled access
+- separation of privileges
+- scalable permission management
+
+---
+
+### Future Extensions
+
+- Multiple roles per user
+- Permission-based system
+- Role hierarchy
+- Admin panels
