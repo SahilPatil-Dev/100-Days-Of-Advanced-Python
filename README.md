@@ -3438,3 +3438,97 @@ RBAC ensures:
 - Permission-based system
 - Role hierarchy
 - Admin panels
+
+## Day 57 — Pagination, Sorting & API Performance
+
+### Overview
+
+This project enhances the user API by introducing pagination, sorting, and query optimization to support scalable data access.
+
+---
+
+### Problem
+
+Returning large datasets directly leads to:
+
+- high memory usage
+- slow response times
+- poor client performance
+- potential API abuse
+
+---
+
+### Solution
+
+Implemented controlled data access using:
+
+- pagination (page + limit)
+- sorting (field + order)
+- filtering at database level
+
+---
+
+### API Features
+
+#### Pagination
+
+- Query params: `page`, `limit`
+- Offset-based calculation:
+  offset = (page - 1) * limit
+
+#### Sorting
+
+- Supported fields:
+  - age
+  - created_at
+- Order:
+  - asc
+  - desc
+
+#### Filtering
+
+- min_age
+- max_age
+
+---
+
+### Response Structure
+
+{
+  "data": [...],
+  "page": 1,
+  "limit": 10,
+  "total": 100
+}
+
+---
+
+### Performance Considerations
+ - All filtering applied at DB level
+ - Only required records are fetched
+ - Maximum limit enforced to prevent abuse
+ - Sorting handled via indexed columns
+ - Why This Matters
+
+---
+
+### In real backend systems:
+
+ - datasets grow large
+ - clients require partial data
+ - APIs must remain responsive
+
+---
+
+### Pagination and query optimization ensure:
+
+ - scalability
+ - predictable performance
+ - better user experience
+ - Future Extensions
+ - cursor-based pagination
+ - indexing optimization
+ - caching layer (Redis)
+ - query performance tuning
+
+---
