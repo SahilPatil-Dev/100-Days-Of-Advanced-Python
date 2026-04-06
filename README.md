@@ -3532,3 +3532,92 @@ Implemented controlled data access using:
  - query performance tuning
 
 ---
+
+## Day 58 — Background Tasks & Async Processing
+
+### Overview
+
+This project introduces non-blocking API design using background tasks and async endpoints.
+
+---
+
+### Problem
+
+Blocking APIs:
+
+- delay responses
+- degrade performance under load
+- reduce scalability
+
+---
+
+### Solution
+
+Implemented background task processing:
+
+- critical operations handled immediately
+- non-critical work executed after response
+
+---
+
+### Architecture
+
+Flow:
+
+Request → Service → Response → Background Task
+
+---
+
+### Background Tasks
+
+Used for:
+
+- logging
+- analytics simulation
+- delayed processing
+
+---
+
+### Key Concepts
+
+- FastAPI BackgroundTasks
+- non-blocking request handling
+- selective async usage
+- separation of critical vs non-critical work
+
+---
+
+### Async Strategy
+
+- Async used only where beneficial
+- Avoided fake async with blocking operations
+- Maintained clear sync/async boundaries
+
+---
+
+### Example Use Case
+
+Order creation:
+
+1. Save order (immediate)
+2. Respond to client
+3. Log + analytics in background
+
+---
+
+### Why This Matters
+
+Real backend systems:
+
+- respond quickly
+- process heavy tasks later
+- maintain responsiveness under load
+
+---
+
+### Future Extensions
+
+- task queues (Celery / Redis)
+- distributed processing
+- retry mechanisms
+- job scheduling
