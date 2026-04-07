@@ -3621,3 +3621,82 @@ Real backend systems:
 - distributed processing
 - retry mechanisms
 - job scheduling
+
+## Day 59 — File Uploads & Data Ingestion API
+
+### Overview
+
+This project implements a file ingestion API that accepts CSV uploads and processes them through a data pipeline.
+
+---
+
+### Architecture
+
+Flow:
+
+Upload → Validate → Store → Process Pipeline → Return Analytics
+
+---
+
+### Features
+
+- CSV file upload via API
+- Streaming file handling (memory-safe)
+- Schema validation
+- Data cleaning and transformation
+- Aggregation of metrics
+- Analytics response generation
+
+---
+
+### Pipeline Steps
+
+1. Load data
+2. Validate schema
+3. Clean invalid records
+4. Transform timestamps
+5. Aggregate metrics
+
+---
+
+### API Endpoint
+
+POST /upload/logs
+
+Accepts:
+- CSV file (form-data)
+
+Returns:
+- total_records
+- valid_records
+- avg_latency
+- error_rate
+
+---
+
+### Validation Strategy
+
+- File type validation (.csv)
+- Required column enforcement
+- Data cleaning for invalid values
+
+---
+
+### Why This Matters
+
+Real backend systems ingest data through:
+
+- file uploads
+- batch processing
+- log ingestion APIs
+
+This system simulates real-world data ingestion pipelines.
+
+---
+
+### Future Improvements
+
+- async processing (queue-based)
+- file size limits
+- retry mechanisms
+- distributed pipeline execution
