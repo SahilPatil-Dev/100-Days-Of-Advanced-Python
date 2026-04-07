@@ -3700,3 +3700,88 @@ This system simulates real-world data ingestion pipelines.
 - file size limits
 - retry mechanisms
 - distributed pipeline execution
+
+## Day 60 — Async Data Pipeline with Job Processing
+
+### Overview
+
+This project introduces a decoupled data ingestion system using job-based asynchronous processing.
+
+---
+
+### Problem
+
+Synchronous pipelines:
+
+- block API responses
+- fail under large workloads
+- degrade user experience
+
+---
+
+### Solution
+
+Implemented a job-based processing system:
+
+- ingestion separated from processing
+- background execution
+- job status tracking
+
+---
+
+### Architecture
+
+Flow:
+
+Upload → Save File → Create Job → Return Response  
+                             ↓  
+                Background Worker → Process Pipeline
+
+---
+
+### Job Lifecycle
+
+- pending → job created
+- processing → pipeline running
+- completed → success
+- failed → error occurred
+
+---
+
+### API Endpoints
+
+POST /upload/logs  
+→ Upload file and create job  
+
+GET /jobs/{job_id}  
+→ Track job status  
+
+---
+
+### Key Features
+
+- Non-blocking API design
+- Background job execution
+- Job status tracking
+- Failure handling
+- Decoupled architecture
+
+---
+
+### Why This Matters
+
+Real systems use this pattern for:
+
+- analytics pipelines
+- report generation
+- media processing
+- large-scale data ingestion
+
+---
+
+### Future Improvements
+
+- distributed workers (Celery)
+- retry mechanisms
+- queue systems (Redis)
+- job prioritization
