@@ -3785,3 +3785,63 @@ Real systems use this pattern for:
 - retry mechanisms
 - queue systems (Redis)
 - job prioritization
+
+## Day 61 — External API Integration (Async & Resilient Design)
+
+### Overview
+
+This project integrates an external API into the backend system using asynchronous HTTP calls with proper error handling.
+
+---
+
+### Architecture
+
+Flow:
+
+Route → Service → External API Client
+
+---
+
+### Key Concepts
+
+- Async HTTP requests using httpx
+- Timeout handling for reliability
+- Error handling for external failures
+- Separation of integration logic
+
+---
+
+### Features
+
+- Fetch external data asynchronously
+- Graceful failure handling
+- Structured API responses
+- Integration layer abstraction
+
+---
+
+### Why This Matters
+
+Backend systems depend on external services such as:
+
+- payment providers
+- analytics APIs
+- third-party integrations
+
+These services are unreliable, so systems must handle failures safely.
+
+---
+
+### Design Principles
+
+- No HTTP calls in route layer
+- External logic isolated in integration module
+- Failures do not crash the system
+
+---
+
+### Future Improvements
+
+- retry mechanism
+- circuit breaker pattern
+- caching external responses
