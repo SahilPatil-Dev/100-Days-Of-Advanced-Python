@@ -3845,3 +3845,81 @@ These services are unreliable, so systems must handle failures safely.
 - retry mechanism
 - circuit breaker pattern
 - caching external responses
+
+## Day 62 — Caching (Performance Optimization)
+
+### Overview
+
+This project implements in-memory caching in a FastAPI-based analytics system to improve performance and reduce redundant computations.
+
+It demonstrates how caching can significantly speed up repeated API calls, especially when dealing with file processing, data pipelines, and external API enrichment.
+
+---
+
+### Architecture
+
+Flow:
+
+Request → Route → Service → Cache →  
+(Cache Hit → Return Cached Response)  
+(Cache Miss → Process File → Enrich Data → Store → Return)
+
+---
+
+### Key Concepts
+
+- In-memory caching using a Python dictionary
+- TTL (time-to-live) based cache expiration
+- Cache-first strategy (check cache before computation)
+- Async file handling with `UploadFile`
+- Handling file streams correctly (`await file.read()` + reset pointer)
+
+---
+
+### Features
+
+- External API responses cached (60 seconds TTL)
+- Analytics results cached (120 seconds TTL)
+- File upload + CSV processing pipeline
+- Data enrichment using external API
+- Refresh flag to bypass cache (`?refresh=true`)
+- Automatic cache expiry handling
+
+---
+
+### Why This Matters
+
+Caching plays a crucial role in backend systems:
+
+- Reduces response time for repeated requests
+- Avoids unnecessary recomputation of expensive operations
+- Minimizes external API calls
+- Improves scalability and system efficiency
+
+---
+
+### Tradeoffs
+
+- Cached data can become stale
+- Memory usage increases with more cached entries
+- Requires careful cache invalidation strategy
+- Static cache keys may return incorrect results for different inputs
+
+---
+
+### Lessons Learned
+
+- Difference between async and sync operations (FastAPI vs pandas)
+- Importance of not reusing consumed file streams
+- Need for consistent data flow (file vs file path)
+- Designing proper cache keys (e.g., hash-based caching)
+
+---
+
+### Future Improvements
+
+- Use Redis for production-grade caching
+- Implement cache keys based on file hash
+- Add background task processing for large files
+- Stream large CSV files instead of loading into memory
+- Introduce distributed caching for scalability
