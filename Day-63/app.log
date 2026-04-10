@@ -1,0 +1,173 @@
+{"time": "2026-04-10 17:48:17,648", "level": "INFO", "message": "GET / - Health check endpoint hit", "request_id": "8962e58a-1f2d-4365-9d41-93894ed94709"}
+{"time": "2026-04-10 17:48:54,760", "level": "INFO", "message": "GET / - Health check endpoint hit", "request_id": "6e6145c5-459e-499f-9a93-d8c632d78ccc"}
+{"time": "2026-04-10 17:49:43,636", "level": "INFO", "message": "GET /external-data - Request received", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:43,637", "level": "INFO", "message": "Service: Fetching external data", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:43,637", "level": "INFO", "message": "External API: Checking cache", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:43,638", "level": "INFO", "message": "External API: Cache MISS \u2192 Calling API", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:44,441", "level": "INFO", "message": "External API: Response status 200", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:44,441", "level": "INFO", "message": "External API: Caching response", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:44,443", "level": "INFO", "message": "fetch_external_data completed", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:44,443", "level": "INFO", "message": "Service: Retrieved 10 records from external API", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:44,443", "level": "INFO", "message": "get_external_data completed", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:49:44,444", "level": "INFO", "message": "GET /external-data - Response sent successfully", "request_id": "a0d4026c-c073-4af7-bc27-4f7f9978c2b7"}
+{"time": "2026-04-10 17:51:03,049", "level": "INFO", "message": "POST /upload-logs - File received: api_logs.csv", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,052", "level": "INFO", "message": "Ingestion: Upload started for file api_logs.csv", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,053", "level": "INFO", "message": "Ingestion: Saving file to disk", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,053", "level": "INFO", "message": "FileHandler: Saving uploaded file", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,053", "level": "INFO", "message": "FileHandler: Directory 'uploads' not found \u2192 Creating", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,058", "level": "INFO", "message": "FileHandler: Writing file to uploads\\aef1135d-8542-489c-a0ec-3cd540627b95.csv", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,064", "level": "INFO", "message": "FileHandler: File saved successfully", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,068", "level": "INFO", "message": "Ingestion: File saved at uploads\\aef1135d-8542-489c-a0ec-3cd540627b95.csv", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,071", "level": "INFO", "message": "Ingestion: Starting pipeline processing", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,072", "level": "INFO", "message": "Pipeline: Processing started", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,072", "level": "INFO", "message": "Pipeline: File read complete | size=1159 bytes", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,124", "level": "INFO", "message": "Pipeline: CSV loaded | total_records=30", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,124", "level": "INFO", "message": "Pipeline: Validating CSV structure", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,124", "level": "INFO", "message": "Pipeline: Validation successful", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,125", "level": "INFO", "message": "Pipeline: Cleaning data", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,146", "level": "INFO", "message": "Pipeline: Cleaned data | before=30, after=30", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,147", "level": "INFO", "message": "Pipeline: Transforming data", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,175", "level": "INFO", "message": "Pipeline: Transformation completed", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,180", "level": "INFO", "message": "Pipeline: Converted to records | count=30", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,181", "level": "INFO", "message": "Enrichment: Starting data enrichment", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,189", "level": "INFO", "message": "External API: Checking cache", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,190", "level": "INFO", "message": "External API: Cache MISS \u2192 Calling API", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,885", "level": "INFO", "message": "External API: Response status 200", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,886", "level": "INFO", "message": "External API: Caching response", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,886", "level": "INFO", "message": "fetch_external_data completed", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,890", "level": "INFO", "message": "Enrichment: Retrieved 10 external records", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,891", "level": "INFO", "message": "Enrichment: Successfully enriched 30 records", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,891", "level": "INFO", "message": "enrich_data_with_external completed", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,893", "level": "INFO", "message": "Pipeline: Enriched data converted back to DataFrame", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,894", "level": "INFO", "message": "Pipeline: Aggregating metrics", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,907", "level": "INFO", "message": "Pipeline: Aggregation complete | total=30 avg_latency=280.77 error_rate=0.13", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,929", "level": "INFO", "message": "Pipeline: Processing completed successfully", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,940", "level": "INFO", "message": "process_pipeline completed", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,942", "level": "INFO", "message": "Ingestion: Pipeline processing completed successfully", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,943", "level": "INFO", "message": "handle_file_upload completed", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:51:03,943", "level": "INFO", "message": "POST /upload-logs - File processed successfully", "request_id": "8cd7bff2-bf11-4ecd-8365-d4c39b56589e"}
+{"time": "2026-04-10 17:52:07,298", "level": "INFO", "message": "POST /analytics/summary - Request received | refresh=False", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,343", "level": "INFO", "message": "Analytics: Summary generation started", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,345", "level": "INFO", "message": "Analytics: Generated cache key analytics_e5a5a88688c2fcbd0b6f7aa13c979249", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,346", "level": "INFO", "message": "Analytics: Checking cache", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,346", "level": "INFO", "message": "Analytics: Cache MISS", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,346", "level": "INFO", "message": "Analytics: Running pipeline (fresh computation)", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,346", "level": "INFO", "message": "Pipeline: Processing started", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,347", "level": "INFO", "message": "Pipeline: File read complete | size=1159 bytes", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,350", "level": "INFO", "message": "Pipeline: CSV loaded | total_records=30", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,356", "level": "INFO", "message": "Pipeline: Validating CSV structure", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,357", "level": "INFO", "message": "Pipeline: Validation successful", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,357", "level": "INFO", "message": "Pipeline: Cleaning data", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,364", "level": "INFO", "message": "Pipeline: Cleaned data | before=30, after=30", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,370", "level": "INFO", "message": "Pipeline: Transforming data", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,375", "level": "INFO", "message": "Pipeline: Transformation completed", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,389", "level": "INFO", "message": "Pipeline: Converted to records | count=30", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,389", "level": "INFO", "message": "Enrichment: Starting data enrichment", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,390", "level": "INFO", "message": "External API: Checking cache", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:07,390", "level": "INFO", "message": "External API: Cache MISS \u2192 Calling API", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,006", "level": "INFO", "message": "External API: Response status 200", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,006", "level": "INFO", "message": "External API: Caching response", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,006", "level": "INFO", "message": "fetch_external_data completed", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,007", "level": "INFO", "message": "Enrichment: Retrieved 10 external records", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,007", "level": "INFO", "message": "Enrichment: Successfully enriched 30 records", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,007", "level": "INFO", "message": "enrich_data_with_external completed", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,009", "level": "INFO", "message": "Pipeline: Enriched data converted back to DataFrame", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,009", "level": "INFO", "message": "Pipeline: Aggregating metrics", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,010", "level": "INFO", "message": "Pipeline: Aggregation complete | total=30 avg_latency=280.77 error_rate=0.13", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,011", "level": "INFO", "message": "Pipeline: Processing completed successfully", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,011", "level": "INFO", "message": "process_pipeline completed", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,011", "level": "INFO", "message": "Analytics: Storing result in cache (TTL=120s)", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,011", "level": "INFO", "message": "Analytics: Summary generation completed", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,012", "level": "INFO", "message": "get_analytics_summary completed", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:08,018", "level": "INFO", "message": "POST /analytics/summary - Summary generated successfully", "request_id": "f40a0177-7138-4e54-b554-28c57947c244"}
+{"time": "2026-04-10 17:52:38,101", "level": "INFO", "message": "POST /analytics/summary - Request received | refresh=False", "request_id": "df50ba20-9057-49b7-81ce-7b81798ed595"}
+{"time": "2026-04-10 17:52:38,101", "level": "INFO", "message": "Analytics: Summary generation started", "request_id": "df50ba20-9057-49b7-81ce-7b81798ed595"}
+{"time": "2026-04-10 17:52:38,102", "level": "INFO", "message": "Analytics: Generated cache key analytics_e5a5a88688c2fcbd0b6f7aa13c979249", "request_id": "df50ba20-9057-49b7-81ce-7b81798ed595"}
+{"time": "2026-04-10 17:52:38,102", "level": "INFO", "message": "Analytics: Checking cache", "request_id": "df50ba20-9057-49b7-81ce-7b81798ed595"}
+{"time": "2026-04-10 17:52:38,103", "level": "INFO", "message": "Analytics: Cache HIT", "request_id": "df50ba20-9057-49b7-81ce-7b81798ed595"}
+{"time": "2026-04-10 17:52:38,103", "level": "INFO", "message": "get_analytics_summary completed", "request_id": "df50ba20-9057-49b7-81ce-7b81798ed595"}
+{"time": "2026-04-10 17:52:38,103", "level": "INFO", "message": "POST /analytics/summary - Summary generated successfully", "request_id": "df50ba20-9057-49b7-81ce-7b81798ed595"}
+{"time": "2026-04-10 19:35:15,796", "level": "INFO", "message": "GET / - Health check endpoint hit", "request_id": "70f0a2c6-fa68-49f8-a772-f5082ce8e355"}
+{"time": "2026-04-10 19:35:34,779", "level": "INFO", "message": "GET /external-data - Request received", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:34,780", "level": "INFO", "message": "Service: Fetching external data", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:34,780", "level": "INFO", "message": "External API: Checking cache", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:34,781", "level": "INFO", "message": "External API: Cache MISS \u2192 Calling API", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:35,805", "level": "INFO", "message": "External API: Response status 200", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:35,814", "level": "INFO", "message": "External API: Caching response", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:35,837", "level": "INFO", "message": "fetch_external_data completed", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4", "duration": 1.06}
+{"time": "2026-04-10 19:35:35,838", "level": "INFO", "message": "Service: Retrieved 10 records from external API", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:35,852", "level": "INFO", "message": "get_external_data completed", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4", "duration": 1.07}
+{"time": "2026-04-10 19:35:35,852", "level": "INFO", "message": "GET /external-data - Response sent successfully", "request_id": "6712f758-786c-4bf9-96f9-852b382f8ea4"}
+{"time": "2026-04-10 19:35:57,993", "level": "INFO", "message": "POST /upload-logs - File received: api_logs.csv", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:57,995", "level": "INFO", "message": "Ingestion: Upload started for file api_logs.csv", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:57,996", "level": "INFO", "message": "Ingestion: Saving file to disk", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:57,996", "level": "INFO", "message": "FileHandler: Saving uploaded file", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:57,997", "level": "INFO", "message": "FileHandler: Directory 'uploads' already exists", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:57,997", "level": "INFO", "message": "FileHandler: Writing file to uploads\\56561ddc-1448-4c42-9047-375eded6d3cf.csv", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:57,999", "level": "INFO", "message": "FileHandler: File saved successfully", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,000", "level": "INFO", "message": "Ingestion: File saved at uploads\\56561ddc-1448-4c42-9047-375eded6d3cf.csv", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,000", "level": "INFO", "message": "Ingestion: Starting pipeline processing", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,001", "level": "INFO", "message": "Pipeline: Processing started", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,004", "level": "INFO", "message": "Pipeline: File read complete | size=1159 bytes", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,038", "level": "INFO", "message": "Pipeline: CSV loaded | total_records=30", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,039", "level": "INFO", "message": "Pipeline: Validating CSV structure", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,039", "level": "INFO", "message": "Pipeline: Validation successful", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,040", "level": "INFO", "message": "Pipeline: Cleaning data", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,073", "level": "INFO", "message": "Pipeline: Cleaned data | before=30, after=30", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,073", "level": "INFO", "message": "Pipeline: Transforming data", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,118", "level": "INFO", "message": "Pipeline: Transformation completed", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,124", "level": "INFO", "message": "Pipeline: Converted to records | count=30", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,124", "level": "INFO", "message": "Enrichment: Starting data enrichment", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,139", "level": "INFO", "message": "External API: Checking cache", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,140", "level": "INFO", "message": "External API: Cache HIT", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,152", "level": "INFO", "message": "fetch_external_data completed", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011", "duration": 0.01}
+{"time": "2026-04-10 19:35:58,152", "level": "INFO", "message": "Enrichment: Retrieved 10 external records", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,153", "level": "INFO", "message": "Enrichment: Successfully enriched 30 records", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,153", "level": "INFO", "message": "enrich_data_with_external completed", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011", "duration": 0.03}
+{"time": "2026-04-10 19:35:58,157", "level": "INFO", "message": "Pipeline: Enriched data converted back to DataFrame", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,174", "level": "INFO", "message": "Pipeline: Aggregating metrics", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,207", "level": "INFO", "message": "Pipeline: Aggregation complete | total=30 avg_latency=280.77 error_rate=0.13", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,208", "level": "INFO", "message": "Pipeline: Processing completed successfully", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,214", "level": "INFO", "message": "process_pipeline completed", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011", "duration": 0.21}
+{"time": "2026-04-10 19:35:58,215", "level": "INFO", "message": "Ingestion: Pipeline processing completed successfully", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:35:58,218", "level": "INFO", "message": "handle_file_upload completed", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011", "duration": 0.22}
+{"time": "2026-04-10 19:35:58,218", "level": "INFO", "message": "POST /upload-logs - File processed successfully", "request_id": "1df30251-5ee7-40ea-affe-2ea3d0eae011"}
+{"time": "2026-04-10 19:36:30,359", "level": "INFO", "message": "POST /analytics/summary - Request received | refresh=False", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,360", "level": "INFO", "message": "Analytics: Summary generation started", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,373", "level": "INFO", "message": "Analytics: Generated cache key analytics_e5a5a88688c2fcbd0b6f7aa13c979249", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,384", "level": "INFO", "message": "Analytics: Checking cache", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,384", "level": "INFO", "message": "Analytics: Cache MISS", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,385", "level": "INFO", "message": "Analytics: Running pipeline (fresh computation)", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,385", "level": "INFO", "message": "Pipeline: Processing started", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,385", "level": "INFO", "message": "Pipeline: File read complete | size=1159 bytes", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,387", "level": "INFO", "message": "Pipeline: CSV loaded | total_records=30", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,388", "level": "INFO", "message": "Pipeline: Validating CSV structure", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,388", "level": "INFO", "message": "Pipeline: Validation successful", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,389", "level": "INFO", "message": "Pipeline: Cleaning data", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,392", "level": "INFO", "message": "Pipeline: Cleaned data | before=30, after=30", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,395", "level": "INFO", "message": "Pipeline: Transforming data", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,401", "level": "INFO", "message": "Pipeline: Transformation completed", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,402", "level": "INFO", "message": "Pipeline: Converted to records | count=30", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,403", "level": "INFO", "message": "Enrichment: Starting data enrichment", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,406", "level": "INFO", "message": "External API: Checking cache", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,419", "level": "INFO", "message": "External API: Cache HIT", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,420", "level": "INFO", "message": "fetch_external_data completed", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85", "duration": 0.01}
+{"time": "2026-04-10 19:36:30,423", "level": "INFO", "message": "Enrichment: Retrieved 10 external records", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,423", "level": "INFO", "message": "Enrichment: Successfully enriched 30 records", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,424", "level": "INFO", "message": "enrich_data_with_external completed", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85", "duration": 0.02}
+{"time": "2026-04-10 19:36:30,433", "level": "INFO", "message": "Pipeline: Enriched data converted back to DataFrame", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,435", "level": "INFO", "message": "Pipeline: Aggregating metrics", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,445", "level": "INFO", "message": "Pipeline: Aggregation complete | total=30 avg_latency=280.77 error_rate=0.13", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,446", "level": "INFO", "message": "Pipeline: Processing completed successfully", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,451", "level": "INFO", "message": "process_pipeline completed", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85", "duration": 0.07}
+{"time": "2026-04-10 19:36:30,454", "level": "INFO", "message": "Analytics: Storing result in cache (TTL=120s)", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,454", "level": "INFO", "message": "Analytics: Summary generation completed", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:30,455", "level": "INFO", "message": "get_analytics_summary completed", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85", "duration": 0.09}
+{"time": "2026-04-10 19:36:30,455", "level": "INFO", "message": "POST /analytics/summary - Summary generated successfully", "request_id": "36d42e41-82bd-4015-97b5-e413cc541f85"}
+{"time": "2026-04-10 19:36:43,307", "level": "INFO", "message": "POST /analytics/summary - Request received | refresh=False", "request_id": "48cfe787-46eb-4132-88d4-554561d25bcf"}
+{"time": "2026-04-10 19:36:43,307", "level": "INFO", "message": "Analytics: Summary generation started", "request_id": "48cfe787-46eb-4132-88d4-554561d25bcf"}
+{"time": "2026-04-10 19:36:43,307", "level": "INFO", "message": "Analytics: Generated cache key analytics_e5a5a88688c2fcbd0b6f7aa13c979249", "request_id": "48cfe787-46eb-4132-88d4-554561d25bcf"}
+{"time": "2026-04-10 19:36:43,307", "level": "INFO", "message": "Analytics: Checking cache", "request_id": "48cfe787-46eb-4132-88d4-554561d25bcf"}
+{"time": "2026-04-10 19:36:43,308", "level": "INFO", "message": "Analytics: Cache HIT", "request_id": "48cfe787-46eb-4132-88d4-554561d25bcf"}
+{"time": "2026-04-10 19:36:43,309", "level": "INFO", "message": "get_analytics_summary completed", "request_id": "48cfe787-46eb-4132-88d4-554561d25bcf", "duration": 0.0}
+{"time": "2026-04-10 19:36:43,309", "level": "INFO", "message": "POST /analytics/summary - Summary generated successfully", "request_id": "48cfe787-46eb-4132-88d4-554561d25bcf"}

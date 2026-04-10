@@ -3923,3 +3923,136 @@ Caching plays a crucial role in backend systems:
 - Add background task processing for large files
 - Stream large CSV files instead of loading into memory
 - Introduce distributed caching for scalability
+
+## Day 63 — Caching, Tracing & Performance Monitoring
+
+### Overview
+
+This project enhances a FastAPI-based analytics system with caching,
+request tracing, execution time monitoring, and a structured data pipeline
+to improve performance, observability, and reliability.
+
+It demonstrates how combining caching, logging, and pipeline processing
+can significantly optimize repeated API calls, file-based analytics,
+and external API integrations.
+
+---
+
+### Architecture
+
+Flow:
+
+Request → Route → Service → Pipeline → Enrichment → Integration  
+         ↘ Cache Layer ↘ Logging & Timing  
+
+(Cache Hit → Return Cached Response)  
+(Cache Miss → Process File → Enrich Data → Store → Return)
+
+---
+
+### Key Concepts
+
+- In-memory caching using a Python dictionary
+- TTL (time-to-live) based cache expiration
+- Cache-first strategy (check before computation)
+- Request tracing using unique request IDs
+- Execution time tracking using decorators
+- Async file handling with UploadFile
+- Structured JSON logging across all layers
+
+---
+
+### What is Implemented
+
+#### 1. Caching Layer
+
+- Custom in-memory cache with TTL support
+- Used for:
+  - External API responses
+  - Analytics summaries
+- Reduces redundant computations and API calls
+
+#### 2. Request Tracing
+
+- Unique request ID generated per request
+- Stored using context variables
+- Automatically included in all logs
+
+#### 3. Execution Time Monitoring
+
+- Decorator (`log_execution_time`) for timing functions
+- Supports both async and sync functions
+- Logs execution duration for performance tracking
+
+#### 4. File Handling
+
+- Chunk-based file saving
+- Unique file naming using UUID
+- Ensures memory-efficient uploads
+- CSV validation enforced
+
+#### 5. Data Processing Pipeline
+
+Steps:
+
+- Validation → Cleaning → Transformation → Enrichment → Aggregation
+
+Handles:
+- Invalid/missing data
+- Timestamp transformations
+- Metric calculations (latency, error rate, totals)
+
+#### 6. External API Integration
+
+- Async HTTP calls using httpx
+- Error handling via custom exceptions
+- Cached responses to improve speed and resilience
+
+---
+
+### What is Logged
+
+- Incoming API requests and responses
+- Cache HIT / MISS events
+- File upload and storage operations
+- Pipeline execution steps
+- External API calls and failures
+- Execution time (duration)
+- Errors with stack traces
+- Request ID for traceability
+
+---
+
+### Why This Matters
+
+In production systems:
+
+- Caching reduces latency and infrastructure cost
+- Request tracing helps debug complex workflows
+- Execution timing reveals performance bottlenecks
+- Structured logs enable monitoring and alerting
+- Pipelines ensure consistent and reliable data processing
+
+This setup reflects real-world backend system design.
+
+---
+
+### Best Practices
+
+- Use caching with appropriate TTL values
+- Avoid caching sensitive or user-specific data blindly
+- Always reset file pointers after reading (seek(0))
+- Keep logs structured (JSON format preferred)
+- Validate data early in the pipeline
+- Handle external failures gracefully
+
+---
+
+### Future Improvements
+
+- Redis or distributed caching
+- Background jobs (Celery / RQ)
+- Distributed tracing (OpenTelemetry)
+- Centralized logging (ELK / Loki)
+- Metrics & dashboards (Prometheus + Grafana)
+- Rate limiting and circuit breakers
