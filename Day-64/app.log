@@ -1,0 +1,9 @@
+{"time": "2026-04-13 16:52:13,270", "level": "ERROR", "message": "Unexpected Error: create_user() missing 1 required positional argument: 'age'", "request_id": null}
+{"time": "2026-04-13 16:56:07,690", "level": "ERROR", "message": "AppError: User must be at least 18", "request_id": null}
+{"time": "2026-04-13 16:56:19,294", "level": "ERROR", "message": "Unexpected Error: maximum recursion depth exceeded", "request_id": null}
+{"time": "2026-04-13 16:58:06,172", "level": "ERROR", "message": "Unexpected Error: maximum recursion depth exceeded", "request_id": null}
+{"time": "2026-04-13 16:58:06,857", "level": "ERROR", "message": "Unexpected Error: maximum recursion depth exceeded", "request_id": null}
+{"time": "2026-04-13 16:58:12,950", "level": "ERROR", "message": "Unexpected Error: maximum recursion depth exceeded", "request_id": null}
+{"time": "2026-04-13 17:00:45,983", "level": "ERROR", "message": "Unexpected Error: maximum recursion depth exceeded", "request_id": null}
+{"time": "2026-04-13 17:01:24,911", "level": "ERROR", "message": "Unexpected Error: maximum recursion depth exceeded", "request_id": null}
+{"time": "2026-04-13 17:05:53,509", "level": "ERROR", "message": "AppError: User not found", "request_id": null}

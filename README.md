@@ -4056,3 +4056,65 @@ This setup reflects real-world backend system design.
 - Centralized logging (ELK / Loki)
 - Metrics & dashboards (Prometheus + Grafana)
 - Rate limiting and circuit breakers
+
+## Day 64 — Global Error Handling
+
+### Overview
+
+This project implements centralized exception handling to ensure consistent and predictable API error responses.
+
+---
+
+### Architecture
+
+Error flow:
+
+Service → Raise Exception → Global Handler → Structured Response
+
+---
+
+### Exception Hierarchy
+
+- AppError (base)
+- ValidationError
+- NotFoundError
+- UnauthorizedError
+- ExternalServiceError
+
+---
+
+### Features
+
+- Centralized error handling
+- Consistent response format
+- Separation of error types
+- No scattered try/except blocks
+
+---
+
+### Response Format
+
+{
+  "success": false,
+  "error": "message"
+}
+
+---
+
+### Why This Matters
+
+Clean error handling ensures:
+
+- predictable API behavior
+- easier debugging
+- better frontend integration
+- maintainable backend code
+
+---
+
+### Best Practices
+
+- Do not catch exceptions unnecessarily
+- Let errors propagate
+- Use domain-specific exceptions
+- Avoid exposing internal errors
