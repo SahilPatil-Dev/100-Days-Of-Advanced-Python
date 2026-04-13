@@ -4118,3 +4118,54 @@ Clean error handling ensures:
 - Let errors propagate
 - Use domain-specific exceptions
 - Avoid exposing internal errors
+
+## Day 65 — API Documentation & Developer Experience
+
+### Overview
+
+This project improves API usability by enhancing documentation using FastAPI and Pydantic schemas.
+
+---
+
+### Features
+
+- Fully documented endpoints
+- Request/response schemas with examples
+- Field-level validation and descriptions
+- Clean Swagger UI integration
+
+---
+
+### API Documentation
+
+Available at:
+
+http://localhost:8000/docs
+
+---
+
+### Key Improvements
+
+- Clear schema definitions
+- Example values for all fields
+- Consistent response models
+- Proper HTTP status codes
+
+---
+
+### Why This Matters
+
+Developer-friendly APIs:
+
+- reduce onboarding time
+- prevent misuse
+- improve collaboration
+- enhance maintainability
+
+---
+
+### Best Practices Applied
+
+- descriptive field names
+- strict validation rules
+- consistent API structure
