@@ -4169,3 +4169,62 @@ Developer-friendly APIs:
 - descriptive field names
 - strict validation rules
 - consistent API structure
+
+---
+
+## Day 66 — Clean Architecture (FastAPI)
+
+### Overview
+
+This project refactors the API into a clean, production-ready architecture using layered design with FastAPI, SQLAlchemy, and Pydantic.
+
+---
+
+### Architecture
+
+API → Service → Repository → DB
+
+- **API layer**: Handles HTTP requests (no business logic)
+- **Service layer**: Contains business rules and validation
+- **Repository layer**: Handles database operations only
+- **DB layer**: Models and session management
+
+---
+
+### Features
+
+- Scalable folder structure
+- Clear separation of concerns
+- Dependency injection (DB sessions)
+- Reusable service logic
+- Clean and testable codebase
+
+---
+
+### Key Improvements
+
+- Removed business logic from routes
+- Centralized DB operations in repositories
+- Introduced service layer for validation & rules
+- Structured project for real-world scaling
+
+---
+
+### Why This Matters
+
+- Easier to maintain and extend
+- Improves team collaboration
+- Reduces bugs and code duplication
+- Matches industry backend standards
+
+---
+
+### Best Practices Applied
+
+- Thin controllers (routes)
+- Single responsibility per layer
+- Clean dependency flow
+- Modular design
+
+---
+
