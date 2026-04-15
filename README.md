@@ -4228,3 +4228,125 @@ API → Service → Repository → DB
 
 ---
 
+## Day 67 – Database Migrations with Alembic
+
+### Overview
+
+This project introduces database migrations using Alembic to manage schema changes safely in a production-style backend system.
+
+Instead of modifying the database manually, all changes are version-controlled and applied through structured migration scripts.
+
+---
+
+### Architecture
+
+Migration flow:
+
+Model Change → Alembic Autogenerate → Manual Review → Apply Migration → Database Updated
+
+Application flow remains:
+
+API → Service → Repository → Database
+
+---
+
+### Key Concepts
+
+- Schema evolution using versioned migrations
+- Alembic integration with SQLAlchemy models
+- Migration lifecycle:
+  - generate
+  - review
+  - apply
+- Backward compatibility during schema updates
+- Safe database modification without data loss
+
+---
+
+### Features
+
+- Alembic setup and configuration
+- Automatic migration generation from models
+- Manual migration review before execution
+- Applying migrations using `upgrade head`
+- Schema evolution example (adding new column)
+- Rollback support using `downgrade`
+
+---
+
+### Migration Workflow
+
+1. Update SQLAlchemy models  
+2. Generate migration:
+
+   alembic revision --autogenerate -m "message"
+
+3. Review generated migration file  
+4. Apply migration:
+
+   alembic upgrade head
+
+---
+
+### Example Change
+
+Added new column:
+
+- `is_active` (boolean) to User model
+
+Handled safely by:
+
+- Allowing nullable initially
+- Avoiding breaking existing records
+- Applying migration incrementally
+
+---
+
+### Why This Matters
+
+Real backend systems require:
+
+- Safe schema updates without downtime
+- Version control for database structure
+- Compatibility with existing production data
+- Ability to rollback changes if needed
+
+Using `create_all()` is unsafe because:
+
+- It does not track schema changes
+- It cannot handle migrations
+- It breaks consistency across environments
+
+---
+
+### Edge Case Considerations
+
+- Migration failure mid-execution
+- Existing data violating new constraints
+- Adding NOT NULL columns safely
+- Rollback strategy using `alembic downgrade`
+- Handling inconsistent production data
+
+---
+
+### Production Mindset
+
+Database changes must be:
+
+- Controlled
+- Reviewed
+- Versioned
+- Reversible
+
+A bad migration can break the entire system.
+
+---
+
+### Future Extension
+
+This setup can be extended to:
+
+- PostgreSQL-based production systems
+- Multi-developer migration workflows
+- CI/CD integration for migrations
+- Zero-downtime deployment strategies
