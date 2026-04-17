@@ -4350,3 +4350,60 @@ This setup can be extended to:
 - Multi-developer migration workflows
 - CI/CD integration for migrations
 - Zero-downtime deployment strategies
+
+---
+
+## Day 68 — Configuration & Environment (FastAPI)
+
+### Overview
+This project introduces a production-grade configuration system using Pydantic Settings with environment-based setup for scalability and security.
+
+---
+
+## Architecture
+
+App → Config (Settings) → Environment (.env)
+
+- **Config Layer**: Centralized settings management
+- **Environment Layer**: अलग configs (dev, prod)
+- **Secrets Handling**: Secure & externalized
+
+---
+
+### Features
+
+- Centralized configuration (single source of truth)
+- Environment-based behavior (dev / prod)
+- Secure secrets handling (.env)
+- No hardcoded values
+- Easy deployment across environments
+
+---
+
+### Key Improvements
+
+- Removed hardcoded DB URLs & secrets
+- Introduced Pydantic `BaseSettings`
+- Environment-based config switching
+- Cleaner and scalable configuration structure
+
+---
+
+### Why This Matters
+
+- Makes app deployment-ready
+- Improves security (no secrets in code)
+- Enables multi-environment support
+- Aligns with real-world backend systems
+
+---
+
+### Best Practices Applied
+
+- Config separated from code
+- `.env` files for environment isolation
+- `.gitignore` for sensitive files
+- Fail-fast on missing configs
+- Central config class usage everywhere
+
+---
