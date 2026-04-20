@@ -4522,3 +4522,141 @@ DATABASE_URL=postgresql://user:password@localhost/db
 * Redis caching
 * Rate limiting
 * Tests & CI/CD
+
+## Day 70 — Database Performance & Query Optimization
+
+### 🎯 Objective
+Move from “using a database” to designing for performance and correctness using real data, indexing, and query optimization.
+
+---
+
+### 🧠 Key Concepts
+
+#### 1. Large Data Simulation
+- Seeded 10k users + 50k orders
+- Purpose: expose real performance bottlenecks
+- Used bulk inserts via SQLAlchemy
+
+---
+
+#### 2. Query Performance Analysis
+- Used EXPLAIN ANALYZE to inspect:
+  - Execution plan
+  - Scan type (Seq Scan vs Index Scan)
+  - Execution time
+
+---
+
+#### 3. Indexing (Core Optimization)
+
+#### Single Index
+- email, user_id, age
+- Converts:
+  - ❌ Full table scan → O(n)
+  - ✅ Index lookup → O(log n)
+
+#### Composite Index
+- (user_id, amount)
+- Optimizes:
+  - GROUP BY
+  - Aggregations
+  - Multi-column filters
+
+---
+
+#### 4. N+1 Problem
+
+#### ❌ Problem
+- 1 query for users + N queries for related orders
+- Causes exponential slowdown
+
+#### ✅ Solution
+- joinedload (single query with JOIN)
+- selectinload (2 optimized queries)
+
+---
+
+#### 5. Aggregation Query (Analytics)
+
+- Built query for top users by spending
+- Used:
+  - JOIN
+  - GROUP BY
+  - SUM
+  - ORDER BY
+  - LIMIT
+
+- ORM translated into efficient SQL
+
+---
+
+#### 6. JSONB Usage (PostgreSQL)
+- Flexible schema inside relational DB
+- Query using:
+  - metadata->>'key'
+- Useful for:
+  - logs
+  - analytics
+  - dynamic attributes
+
+---
+
+#### ⚙️ What Was Implemented
+
+- Seed script for large dataset
+- Performance test queries
+- Index optimization
+- N+1 problem demonstration & fix
+- Analytics endpoint (aggregation query)
+- ORM → SQL understanding
+
+---
+
+#### 🧪 Performance Observations
+
+- Without index → full scan → slow
+- With index → index scan → fast
+- JOIN + GROUP BY → heavy → needs optimization
+- Composite index improves aggregation queries
+
+---
+
+#### ⚠️ Important Tradeoffs
+
+- Indexes improve reads but slow writes
+- Not all columns should be indexed
+- Wrong index order = useless index
+- Large joins can still be expensive
+
+---
+
+#### 🧠 Engineer Mindset
+
+- Always ask:
+  - What is slow?
+  - Why is it slow?
+  - How to measure?
+  - How to optimize?
+
+- Never assume performance — measure it
+
+---
+
+#### 🔥 Key Learnings
+
+- Database is a performance engine, not storage
+- ORM hides complexity — must understand SQL underneath
+- Indexing strategy is critical for scalability
+- Query design directly impacts system performance
+
+---
+
+#### 🚀 Outcome
+
+- Built a system that:
+  - Handles large data
+  - Optimizes queries
+  - Avoids common performance pitfalls
+  - Demonstrates real backend engineering skills
+
+---
