@@ -1,5 +1,6 @@
-# 100-Days-Of-Advanced-Python
-A 100-day deep dive into advanced Python concepts through experiments, internals, and real-world use cases.
+# Production-Grade-Backend-Systems-in-Python
+
+A structured progression from Python internals to production-ready backend systems — covering clean architecture, async patterns, data pipelines, FastAPI, SQLAlchemy, database optimization, and a capstone project built for real-world scale.
 
 ## Day 01 – Python Execution Model & Memory References
 
